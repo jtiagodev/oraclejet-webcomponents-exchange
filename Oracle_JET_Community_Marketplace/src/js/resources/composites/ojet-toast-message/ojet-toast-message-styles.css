@@ -1,0 +1,265 @@
+/*
+ICON: oj-message-status-icon
+TITLE MESSAGE: oj-message-category > h1
+BODY MESSAGE: oj-message-summary
+CLOSE BUTTON: oj-message-close
+*/
+
+.atr-toast-grid {
+	display: grid;
+	grid-template-columns: 20px 25px 15px 373px 10px 24px 20px;
+	grid-template-rows: 20px 10px 25px 9px 20px;
+	grid-template-areas: 
+		". . . . . . ."
+		". . . message . . ."
+		". typeIcon . message . close ."
+		". . . message . . ."
+		". . . . . . .";
+}
+
+.oj-message-status-icon {
+	grid-area: typeIcon;
+}
+
+.oj-message-summary {
+	grid-area: message;
+}
+
+.oj-message-close {
+	grid-area: close;
+}
+
+.atr-negative-toast {
+	background-color: #FFE1E1;
+	margin-bottom: 20px; 
+}
+
+.atr-negative-toast .oj-button-label {
+	 background-color: #FFE1E1;
+	 color: #333333;
+	 padding-right: 22px;
+}
+
+.atr-negative-toast .oj-message-category h1 {
+	padding-left: 40px;
+	font-family: Roboto Condensed;
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	font-size: 18px;
+	color: #333333;
+}
+
+.atr-negative-toast .oj-message-container {
+	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.35);
+}
+
+.atr-negative-toast .oj-message-body {
+    padding: 0px 15px 7px 15px;
+}
+
+.atr-negative-toast .oj-message-container {
+    border: 1px solid #ff00002b;
+}
+
+.atr-negative-toast .oj-component-icon {
+	margin-left: 6px;
+}
+
+.atr-negative-toast .oj-button.oj-hover.oj-button-half-chrome .oj-button-icon {
+	color: #8a8d8f;
+}
+
+.atr-negative-toast .oj-button.oj-hover.oj-button-half-chrome .oj-button-button {
+	border: none;
+}
+
+/* Warning Classes 
+*/
+/* .atr-warning-toast {
+	background-color: #FFF3CD;
+	margin-bottom: 20px; 
+	z-index: 200000;
+}
+
+.atr-warning-toast .oj-button-label {
+	 background-color: #FFF3CD;
+	 color: #333333;
+	 padding-right: 22px;
+}
+
+.atr-warning-toast .oj-message-category h1 {
+	padding-left: 40px;
+	font-family: Roboto Condensed;
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	font-size: 18px;
+	color: #333333;
+}
+
+.atr-warning-toast .oj-message-container {
+	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.35);
+}
+
+.atr-warning-toast .oj-message-body {
+    padding: 0px 15px 7px 15px;
+}
+
+.atr-warning-toast .oj-message-container {
+    border: 1px solid rgb(255, 215, 85);
+}
+
+.atr-warning-toast .oj-component-icon {
+	margin-left: 6px;
+}
+
+.atr-warning-toast .oj-button.oj-hover.oj-button-half-chrome .oj-button-icon {
+	color: #8a8d8f;
+}
+
+.atr-warning-toast .oj-button.oj-hover.oj-button-half-chrome .oj-button-button {
+	border: none;
+} */
+
+
+/* Info Classes
+*/
+/* .atr-info-toast {
+	background-color: #FFF0F0;
+	margin-bottom: 20px; 
+}
+
+.atr-info-toast .oj-button-label {
+	 background-color: #FFF0F0;
+	 color: #333333;
+	 padding-right: 22px;
+}
+
+.atr-info-toast .oj-message-category h1 {
+	padding-left: 40px;
+	font-family: Roboto Condensed;
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	font-size: 18px;
+	color: #333333;
+}
+
+.atr-info-toast .oj-message-container {
+	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.35);
+}
+
+.atr-info-toast .oj-message-body {
+    padding: 0px 15px 7px 15px;
+}
+
+.atr-info-toast .oj-message-container {
+    border: 1px solid #ff00002b;
+}
+
+.atr-info-toast .oj-component-icon {
+	margin-left: 6px;
+}
+
+.atr-info-toast .oj-button.oj-hover.oj-button-half-chrome .oj-button-icon {
+	color: #8a8d8f;
+}
+
+.atr-info-toast .oj-button.oj-hover.oj-button-half-chrome .oj-button-button {
+	border: none;
+} */
+
+/* Error Classes
+*/
+/* .atr-error-toast {
+	background-color: #FFF0F0;
+	margin-bottom: 20px; 
+}
+
+.atr-error-toast .oj-button-label {
+	 background-color: #FFF0F0;
+	 color: #333333;
+	 padding-right: 22px;
+}
+
+.atr-error-toast .oj-message-category h1 {
+	padding-left: 40px;
+	font-family: Roboto Condensed;
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	font-size: 18px;
+	color: #333333;
+}
+
+.atr-error-toast .oj-message-container {
+	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.35);
+}
+
+.atr-error-toast .oj-message-body {
+    padding: 0px 15px 7px 15px;
+}
+
+.atr-error-toast .oj-message-container {
+    border: 1px solid #ff00002b;
+}
+
+.atr-error-toast .oj-component-icon {
+	margin-left: 6px;
+}
+
+.atr-error-toast .oj-button.oj-hover.oj-button-half-chrome .oj-button-icon {
+	color: #8a8d8f;
+}
+
+.atr-error-toast .oj-button.oj-hover.oj-button-half-chrome .oj-button-button {
+	border: none;
+} */
+
+/* confirmation Classes
+*/
+/* .atr-confirmation-toast {
+	background-color: #FFF0F0;
+	margin-bottom: 20px; 
+}
+
+.atr-confirmation-toast .oj-button-label {
+	 background-color: #FFF0F0;
+	 color: #333333;
+	 padding-right: 22px;
+}
+
+.atr-confirmation-toast .oj-message-category h1 {
+	padding-left: 40px;
+	font-family: Roboto Condensed;
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	font-size: 18px;
+	color: #333333;
+}
+
+.atr-confirmation-toast .oj-message-container {
+	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.35);
+}
+
+.atr-confirmation-toast .oj-message-body {
+    padding: 0px 15px 7px 15px;
+}
+
+.atr-confirmation-toast .oj-message-container {
+    border: 1px solid #ff00002b;
+}
+
+.atr-confirmation-toast .oj-component-icon {
+	margin-left: 6px;
+}
+
+.atr-confirmation-toast .oj-button.oj-hover.oj-button-half-chrome .oj-button-icon {
+	color: #8a8d8f;
+}
+
+.atr-confirmation-toast .oj-button.oj-hover.oj-button-half-chrome .oj-button-button {
+	border: none;
+} */

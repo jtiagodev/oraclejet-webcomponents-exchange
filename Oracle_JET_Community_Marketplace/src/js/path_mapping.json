@@ -1,0 +1,464 @@
+{
+  "baseUrl": "js",
+  "use": "local",
+
+  "cdns": {
+    "jet": "https://static.oracle.com/cdn/jet/v@version@/default/js",
+    "3rdparty": "https://static.oracle.com/cdn/jet/v@version@/3rdparty"
+  },
+
+  "libs": {
+
+    "knockout": {
+      "cdn": "3rdparty",
+      "cwd": "node_modules/knockout/build/output",
+      "debug": {
+        "src": "knockout-latest.debug.js",
+        "path": "libs/knockout/knockout-#{version}.debug.js",
+        "cdnPath": "knockout/knockout-3.4.2.debug"
+      },
+      "release": {
+        "src": "knockout-latest.js",
+        "path": "libs/knockout/knockout-#{version}.js",
+        "cdnPath": "knockout/knockout-3.4.2"
+      }
+    },
+
+    "jquery": {
+      "cdn": "3rdparty",
+      "cwd": "node_modules/jquery/dist",
+      "debug": {
+        "src": "jquery.js",
+        "path": "libs/jquery/jquery-#{version}.js",
+        "cdnPath": "jquery/jquery-3.3.1"
+      },
+      "release": {
+        "src": "jquery.min.js",
+        "path": "libs/jquery/jquery-#{version}.min.js",
+        "cdnPath": "jquery/jquery-3.3.1.min"
+      }
+    },
+
+    "jqueryui-amd": {
+      "cdn": "3rdparty",
+      "cwd": "node_modules/jquery-ui/ui",
+      "debug": {
+        "src": ["*.js", "widgets/draggable.js", "widgets/mouse.js", "widgets/sortable.js"],
+        "path": "libs/jquery/jqueryui-amd-#{version}",
+        "cdnPath": "jquery/jqueryui-amd-1.12.1"
+      },
+      "release": {
+        "src": ["*.js", "widgets/draggable.js", "widgets/mouse.js", "widgets/sortable.js"],
+        "path": "libs/jquery/jqueryui-amd-#{version}.min",
+        "cdnPath": "jquery/jqueryui-amd-1.12.1.min"
+      }
+    },
+
+    "promise": {
+      "cdn": "3rdparty",
+      "cwd": "node_modules/es6-promise/dist",
+      "debug": {
+        "src": ["es6-promise.js", "es6-promise.map"],
+        "path": "libs/es6-promise/es6-promise.js",
+        "cdnPath": "es6-promise/es6-promise"
+      },
+      "release": {
+        "src": ["es6-promise.min.js", "es6-promise.min.map"],
+        "path": "libs/es6-promise/es6-promise.min.js",
+        "cdnPath": "es6-promise/es6-promise.min"
+      }
+    },
+
+    "hammerjs": {
+      "cdn": "3rdparty",
+      "cwd": "node_modules/hammerjs",
+      "debug": {
+        "src": "hammer.js",
+        "path": "libs/hammer/hammer-#{version}.js",
+        "cdnPath": "hammer/hammer-2.0.8"
+      },
+      "release": {
+        "src": "hammer.min.js",
+        "path": "libs/hammer/hammer-#{version}.min.js",
+        "cdnPath": "hammer/hammer-2.0.8.min"
+      }
+    },
+
+    "ojdnd": {
+      "cdn": "3rdparty",
+      "cwd": "node_modules/@oracle/oraclejet/dist/js/libs/dnd-polyfill",
+      "debug": {
+        "src": "dnd-polyfill-1.0.0.js",
+        "path": "libs/dnd-polyfill/dnd-polyfill-1.0.0.js",
+        "cdnPath": "dnd-polyfill/dnd-polyfill-1.0.0"
+      },
+      "release": {
+        "src": "dnd-polyfill-1.0.0.min.js",
+        "path": "libs/dnd-polyfill/dnd-polyfill-1.0.0.min.js",
+        "cdnPath": "dnd-polyfill/dnd-polyfill-1.0.0.min"
+      }
+    },
+
+    "persist": {
+      "cdn": "3rdparty",
+      "cwd": "node_modules/@oracle/oraclejet/dist/js/libs/persist",
+      "debug": {
+        "cwd": "debug",
+        "src": ["**"],
+        "path": "libs/persist/debug",
+        "cdnPath": "persist/debug"
+      },
+      "release": {
+        "cwd": "min",
+        "src": ["**"],
+        "path": "libs/persist/min",
+        "cdnPath": "persist/min"
+      }
+    },
+
+    "ojs": {
+      "cdn": "jet",
+      "cwd": "node_modules/@oracle/oraclejet/dist/js/libs/oj",
+      "debug": {
+        "cwd": "debug", 
+        "src": ["**"],
+        "path": "libs/oj/v#{version}/debug",
+        "cdnPath": "debug"
+      },
+      "release": {
+        "cwd": "min", 
+        "src": ["**"],
+        "path": "libs/oj/v#{version}/min",
+        "cdnPath": "min"
+      }
+    },
+
+    "ojL10n": {
+      "cdn": "jet",
+      "cwd": "node_modules/@oracle/oraclejet/dist/js/libs/oj",
+      "debug": {
+        "src":  "ojL10n.js",
+        "path": "libs/oj/v#{version}/ojL10n.js",
+        "cdnPath": "ojL10n"
+      },
+      "release": {
+        "src": "ojL10n.js",
+        "path": "libs/oj/v#{version}/ojL10n.js",
+        "cdnPath": "ojL10n"
+      }
+    },
+
+    "ojtranslations": {
+      "cdn": "jet",
+      "cwd": "node_modules/@oracle/oraclejet/dist/js/libs/oj/resources",
+      "debug": {
+        "src":  ["**"],
+        "path": "libs/oj/v#{version}/resources",
+        "cdnPath": "resources"
+      },
+      "release": {
+        "src": ["**"],
+        "path": "libs/oj/v#{version}/resources",
+        "cdnPath": "resources"
+      }
+    },
+
+    "text": {
+      "cdn": "3rdparty",
+      "cwd": "node_modules/requirejs-text",
+      "debug": {
+        "src":  "text.js",
+        "path": "libs/require/text.js",
+        "cdnPath": "require/text"
+      },
+      "release": {
+        "src": "text.js",
+        "path": "libs/require/text.js",
+        "cdnPath": "require/text"
+      }
+    },
+
+    "signals": {
+      "cdn": "3rdparty",
+      "cwd": "node_modules/signals/dist",
+      "debug": {
+        "src":  "signals.js",
+        "path": "libs/js-signals/signals.js",
+        "cdnPath": "js-signals/signals"
+      },
+      "release": {
+        "src": "signals.min.js",
+        "path": "libs/js-signals/signals.min.js",
+        "cdnPath": "js-signals/signals.min"
+      }
+    },
+
+    "touchr": {
+      "cdn": "3rdparty",
+      "cwd": "node_modules/touchr/js",
+      "debug": {
+        "src":  "touchr.js",
+        "path": "libs/touchr/touchr.js",
+        "cdnPath": "touchr/touchr"
+      },
+      "release": {
+        "src": "touchr.js",
+        "path": "libs/touchr/touchr.js",
+        "cdnPath": "touchr/touchr"
+      }
+    },
+
+    "customElements": {
+      "cdn": "3rdparty",
+      "cwd": "node_modules/@webcomponents/custom-elements",
+      "debug": {
+        "src":  ["custom-elements.min.js", "custom-elements.min.js.map"],
+        "path": "libs/webcomponents/custom-elements.min.js",
+        "cdnPath": "webcomponents/custom-elements.min"
+      },
+      "release": {
+        "src": ["custom-elements.min.js", "custom-elements.min.js.map"],
+        "path": "libs/webcomponents/custom-elements.min.js",
+        "cdnPath": "webcomponents/custom-elements.min"
+      }
+    },
+
+    "css": {
+      "cdn": "3rdparty",
+      "cwd": "node_modules/require-css",
+      "debug": {
+        "src":  ["css.js", "css-builder.js", "normalize.js"],
+        "path": "libs/require-css/css.js",
+        "cdnPath": "require-css/css"
+      },
+      "release": {
+        "src": ["css.min.js", "css-builder.js", "normalize.js"],
+        "path": "libs/require-css/css.min.js",
+        "cdnPath": "require-css/css.min"
+      }
+    },
+
+    
+    "ojUAParser": {
+      "cwd": "node_modules/ua-parser-js/dist",
+      "debug": {
+        "src": "ua-parser.min.js",
+        "path": "libs/core/modules/ojUAParser.js"
+      },
+      "release": {
+        "src": "ua-parser.min.js",
+        "path": "libs/core/modules/ojUAParser.js"
+
+      }
+    },
+
+    "ojFetch": {
+      "cwd": "node_modules/axios/dist",
+      "debug": {
+        "src": "axios.min.js",
+        "path": "libs/core/modules/ojFetch.js"
+      },
+      "release": {
+        "src": "axios.min.js",
+        "path": "libs/core/modules/ojFetch.js"
+
+      }
+    },
+
+    "ojTime": {
+      "cwd": "node_modules/moment/min",
+      "debug": {
+        "src": "moment.min.js",
+        "path": "libs/core/modules/ojTime.js"
+      },
+      "release": {
+        "src": "moment.min.js",
+        "path": "libs/core/modules/ojTime.js"
+      }
+    },
+
+    "ojEncrypt": {
+      "cwd": "node_modules/crypto-js",
+      "debug": {
+        "src": "crypto-js.js",
+        "path": "libs/core/modules/ojEncrypt.js"
+      },
+      "release": {
+        "src": "crypto-js.js",
+        "path": "libs/core/modules/ojEncrypt.js"
+      }
+    },
+
+    "ojet": {
+      "cwd": "node_modules/ojet-accelerator/core/common",
+      "debug": {
+        "src": "ojCommon.js",
+        "path": "libs/core/common/ojCommon.js"
+      },
+      "release": {
+        "src": "ojCommon.js",
+        "path": "libs/core/common/ojCommon.js"
+      }
+    },
+
+    "ojAudit": {
+      "cwd": "node_modules/ojet-accelerator/core/audit",
+      "debug": {
+        "src": "ojaudit.js",
+        "path": "libs/core/audit/ojAudit.js"
+      },
+      "release": {
+        "src": "ojaudit.js",
+        "path": "libs/core/audit/ojAudit.js"
+      }
+    },
+
+    "ojDataControls": {
+      "cwd": "node_modules/ojet-accelerator/core/bundles",
+      "debug": {
+        "src": "ojDataControls.js",
+        "path": "libs/core/bundles/ojDataControls.js"
+      },
+      "release": {
+        "src": "ojDataControls.js",
+        "path": "libs/core/bundles/ojDataControls.js"
+      }
+    },
+
+    "ojCommonComponents": {
+      "cwd": "node_modules/ojet-accelerator/core/bundles",
+      "debug": {
+        "src": "ojCommonComponents.js",
+        "path": "libs/core/bundles/ojCommonComponents.js"
+      },
+      "release": {
+        "src": "ojCommonComponents.js",
+        "path": "libs/core/bundles/ojCommonComponents.js"
+      }
+    },
+
+    "ojCommonLibs": {
+      "cwd": "node_modules/ojet-accelerator/core/bundles",
+      "debug": {
+        "src": "ojCommonLibs.js",
+        "path": "libs/core/bundles/ojCommonLibs.js"
+      },
+      "release": {
+        "src": "ojCommonLibs.js",
+        "path": "libs/core/bundles/ojCommonLibs.js"
+      }
+    },
+
+    "ojCoreComponents": {
+      "cwd": "node_modules/ojet-accelerator/core/bundles",
+      "debug": {
+        "src": "ojCoreComponents.js",
+        "path": "libs/core/bundles/ojCoreComponents.js"
+      },
+      "release": {
+        "src": "ojCoreComponents.js",
+        "path": "libs/core/bundles/ojCoreComponents.js"
+      }
+    },
+
+    "ojEvents": {
+      "cwd": "node_modules/ojet-accelerator/core/common",
+      "debug": {
+        "src": "ojEvents.js",
+        "path": "libs/core/common/ojEvents.js"
+      },
+      "release": {
+        "src": "ojEvents.js",
+        "path": "libs/core/common/ojEvents.js"
+      }
+    },
+
+    "ojLogger": {
+      "cwd": "node_modules/ojet-accelerator/core/logger",
+      "debug": {
+        "src": "ojLogger.js",
+        "path": "libs/core/logger/ojLogger.js"
+      },
+      "release": {
+        "src": "ojLogger.js",
+        "path": "libs/core/logger/ojLogger.js"
+      }
+    },
+
+    "ojNavData": {
+      "cwd": "node_modules/ojet-accelerator/core/router",
+      "debug": {
+        "src": "ojNavData.js",
+        "path": "libs/core/router/ojNavData.js"
+      },
+      "release": {
+        "src": "ojNavData.js",
+        "path": "libs/core/router/ojNavData.js"
+      }
+    },
+
+    "ojRouterConfig": {
+      "cwd": "node_modules/ojet-accelerator/core/router",
+      "debug": {
+        "src": "ojRouterConfig.js",
+        "path": "libs/core/router/ojRouterConfig.js"
+      },
+      "release": {
+        "src": "ojRouterConfig.js",
+        "path": "libs/core/router/ojRouterConfig.js"
+      }
+    },
+
+    "ojUtils": {
+      "cwd": "node_modules/ojet-accelerator/core/utils",
+      "debug": {
+        "src": "ojUtils.js",
+        "path": "libs/core/utils/ojUtils.js"
+      },
+      "release": {
+        "src": "ojUtils.js",
+        "path": "libs/core/utils/ojUtils.js"
+      }
+    },
+
+    "babel": {
+      "cwd": "node_modules/requirejs-babel",
+      "debug": {
+        "src": "babel-*.min.js",
+        "path": "libs/core/modules/requirejs-babel/babel.min.js"
+      },
+      "release": {
+        "src": "babel-*.min.js",
+        "path": "libs/core/modules/requirejs-babel/babel.min.js"
+      }
+    },
+
+    
+    "es6": {
+      "cwd": "node_modules/requirejs-babel",
+      "debug": {
+        "src": "es6.js",
+        "path": "libs/core/modules/requirejs-babel/es6.js"
+      },
+      "release": {
+        "src": "es6.js",
+        "path": "libs/core/modules/requirejs-babel/es6.js"
+      }
+    },
+
+    "ojState": {
+      "cwd": "node_modules/redux/dist",
+      "debug": {
+        "src": "redux.min.js",
+        "path": "libs/core/modules/ojState.js"
+      },
+      "release": {
+        "src": "redux.min.js",
+        "path": "libs/core/modules/ojState.js"
+      }
+    }
+
+
+
+  }
+} 

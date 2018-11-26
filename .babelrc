@@ -1,0 +1,17 @@
+{
+    "presets": [
+        [
+            "./Oracle_JET_Community_Marketplace/node_modules/babel-preset-env",
+            {
+                "targets": {
+                    "chrome": "58",
+                    "firefox": "55",
+                    "ie": "11"
+                },
+                "useBuiltIns": true
+            }
+        ]
+    ],
+    "ignore": [],
+    "plugins": []
+}

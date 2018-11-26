@@ -1,0 +1,21 @@
+{
+  "name": "ojet-popup-errorservice",
+  "version": "1.0.0",
+  "jetVersion": "^6.0.0",
+  "displayName": "A user friendly, translatable name of the pack.",
+  "description": "A translatable high-level description for the pack.",
+  "properties": {
+    "errortext": {
+      "type": "string"
+    }
+  },
+  "methods": {
+
+  }, 
+  "events": {
+
+  }, 
+  "slots": {
+
+  }
+}

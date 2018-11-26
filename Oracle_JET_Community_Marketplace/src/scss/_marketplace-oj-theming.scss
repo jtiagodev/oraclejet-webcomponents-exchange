@@ -1,0 +1,277 @@
+/* set default fallback font to Roboto */
+body {
+    font-family: 'Roboto';
+}
+
+/* Avatar */
+.oj-avatar-has-initials .oj-avatar-inner {
+    background-color: white;
+}
+
+.oj-avatar-initials {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    text-align: center;
+    color: #848484;
+}
+
+/* Navigation Menu */
+.oj-navigationlist-item-content .oj-navigationlist-item-label {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 18px;
+    color: #333333;
+}
+
+a.oj-navigationlist-item-content .oj-navigationlist-item-label {
+    color: #333333;
+}
+
+.oj-selected>a.oj-navigationlist-item-content>.oj-navigationlist-item-label {
+    color: #DC0028;
+}
+
+.oj-navigationlist-item.oj-selected {
+    border-color: #DC0028;
+}
+
+.oj-navigationlist-item.oj-hover:not(.oj-selected) {
+    background-color: white;
+    border-color: lightcoral;
+}
+
+.oj-navigationlist-vertical .oj-navigationlist-item.oj-selected {
+    background-color: white;
+}
+
+/* Button */
+.oj-button-label {
+    background-color: #FFFFFF;
+    background-image: none;
+    font-family: Open Sans Condensed;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 22px;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #565656;
+    cursor: pointer;
+}
+
+.oj-button-label>span:first-of-type+span {
+    /* Removes annoying > on buttons */
+    display: none;
+}
+
+.oj-button.oj-active.oj-button-full-chrome .oj-button-button {
+    background-color: lightblue;
+    border-color: lightblue;
+    color: lightblue;
+}
+
+/* Collapsible Button Fix */
+.oj-button-label>span {
+    margin-right: 0rem !important;
+    margin-left: 0rem !important;
+}
+
+/* Select One */
+.oj-select {
+    /* tweaks the stretch 1fr */
+    max-width: 5000px;
+}
+
+.oj-select-chosen {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 18px;
+    color: #333333;
+}
+
+.oj-listbox-result-label {
+    font-family: Roboto Condensed;
+}
+
+/* oj-combobox-one */
+.oj-combobox {
+    max-width: 5000px;
+}
+
+.oj-combobox-choice {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(171, 171, 171, 0.75);
+}
+
+.oj-combobox-input {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 18px;
+    color: #333333;
+    background-color: #FFFFFF;
+}
+
+.oj-combobox-divider {
+    display: none;
+}
+
+/* Input Text */
+.oj-inputtext {
+    /* tweaks the stretch 1fr */
+    max-width: 5000px;
+}
+
+.oj-inputtext-input {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #848484;
+}
+
+.oj-inputtext-input::-webkit-input-placeholder {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #848484;
+}
+
+.oj-inputtext-input:-ms-input-placeholder {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #848484;
+}
+
+.oj-inputtext-input::-ms-input-placeholder {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #848484;
+}
+
+.oj-inputtext-input::placeholder {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #848484;
+}
+
+/* Table */
+.oj-table-body-message {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #333333;
+    background: #FFFFFF;
+}
+
+.oj-table-column-header-text {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 14px;
+    color: #848484;
+}
+
+.oj-table {
+    padding: 20px;
+    background: white;
+    min-width: 940px;
+    /* 984px */
+}
+
+.oj-table-header {
+    background: #FFFFFF;
+    -webkit-box-shadow: inset 0px -1px 0px #CCCCCC, inset 0px 1px 0px #CCCCCC;
+    box-shadow: inset 0px -1px 0px #CCCCCC, inset 0px 1px 0px #CCCCCC;
+}
+
+.oj-table-data-cell {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #333333;
+    background: #FFFFFF;
+}
+
+.oj-table-column-header-cell.oj-hover {
+    /* REMOVE SELECTION OF COLUMNS */
+    background: #FFFFFF;
+    -webkit-box-shadow: inset 0px -1px 0px #CCCCCC, inset 0px 1px 0px #CCCCCC;
+    box-shadow: inset 0px -1px 0px #CCCCCC, inset 0px 1px 0px #CCCCCC;
+}
+
+.oj-table-element:not(.oj-table-column-header-resizing) .oj-table-column-header-cell.oj-focus {
+    /* REMOVE SELECTION OF COLUMNS */
+    outline: dotted 0px;
+}
+
+/* Progress Bar */
+.oj-progress-bar::before {
+    background: white;
+}
+
+.oj-progress-bar-value {
+    background: red;
+}
+
+/* Notifications */
+.oj-messages-notification {
+    padding-top: 90px;
+}
+
+/* Switch - styling & hover fix */
+/* Unselected */
+.oj-switch.oj-hover .oj-switch-thumb {
+    background-color: #f0f0f0;
+    border: 1px solid #f0f0f0;
+    height: 20px;
+    width: 20px;
+}
+
+.oj-switch.oj-hover .oj-switch-track {
+    background-color: #c4c4c4;
+    border-color: #c4c4c4;
+}
+
+/* Selected */
+.oj-switch.oj-selected.oj-hover .oj-switch-thumb {
+    background-color: #C6AA77;
+    border: 1px solid #C6AA77;
+    height: 20px;
+    width: 20px;
+}
+
+.oj-switch.oj-selected.oj-hover .oj-switch-track {
+    background-color: #e6e6e6;
+    border-color: #e6e6e6;
+}
+
+/* Select one */
+.oj-select-choice {
+    background-color: #FFFFFF;
+}

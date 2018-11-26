@@ -1,0 +1,8 @@
+ojet-popup-errorservice:not(.oj-complete){
+  visibility: hidden;
+}
+
+ojet-popup-errorservice{
+	min-height: 50px;
+	width: 50px;
+}

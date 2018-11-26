@@ -1,0 +1,68 @@
+/* Homepage */
+      .atradiusGrid {
+        overflow-x: scroll; /* allows horizontal scroll for our minimum supported width */
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 216px minmax(1064px, 1fr);
+        grid-template-columns: 216px minmax(1064px, 1fr);
+        -ms-grid-rows: 6px 84px minmax(1354px, 1fr);
+        grid-template-rows: 6px 84px minmax(1354px, 1fr);
+        grid-template-areas:
+            "atradiusRed  atradiusRed"
+            "atradiusLogo atradiusHeader"
+            "atradiusMenu atradiusMain";
+    }
+
+    .atradiusRed {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+        grid-area: atradiusRed;
+        background-color: #DC0028;
+    }
+
+    .atradiusLogo {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        grid-area: atradiusLogo;
+        padding: 16px 0px 0px 20px;
+        background-color: #333333;
+    }
+
+    .atradiusHeader {
+        -ms-grid-row: 2;
+        -ms-grid-column: 2;
+        grid-area: atradiusHeader;
+        background-color: #333333;
+    }
+
+    .atradiusMenu {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+        grid-area: atradiusMenu;
+        background-color: #FFFFFF;
+    }
+
+    .atradiusMain {
+        -ms-grid-row: 3;
+        -ms-grid-column: 2;
+        grid-area: atradiusMain;
+        background-color: #f7f7f7;
+        padding: 30px 40px 30px 40px;
+    }
+
+    .atradiusUser {
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 16px;
+        text-align: right;
+        color: #FFFFFF;
+        padding-top: 24px;
+        padding-right: 20px;
+    }
+
+    .atradiusUserAvatar {
+        padding-right: 10px;
+    }

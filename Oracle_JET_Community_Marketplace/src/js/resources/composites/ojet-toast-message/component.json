@@ -1,0 +1,27 @@
+{
+  "name": "ojet-toast-message",
+  "displayName": "ojet-toast-message",
+  "description": "Describe your component here",
+  "version": "1.0.0",
+  "jetVersion": "5.1.0",
+  "properties": {
+    "severity": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "detail" :{
+      "type": "string"
+    }
+  },
+  "methods": {
+
+  }, 
+  "events": {
+
+  }, 
+  "slots": {
+
+  }
+}

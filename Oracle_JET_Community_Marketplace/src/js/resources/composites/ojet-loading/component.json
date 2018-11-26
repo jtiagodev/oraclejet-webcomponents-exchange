@@ -1,0 +1,18 @@
+{
+  "name": "ojet-loading",
+  "displayName": "ojet-loading",
+  "description": "Describe your component here",
+  "version": "1.0.0",
+  "jetVersion": "5.1.0",
+  "properties": {
+  },
+  "methods": {
+
+  }, 
+  "events": {
+
+  }, 
+  "slots": {
+
+  }
+}

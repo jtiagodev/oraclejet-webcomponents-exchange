@@ -1,0 +1,106 @@
+.atr-welcome {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 25px;
+    color: #333333;
+    text-align: center;
+}
+
+.atr-title {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 20px;
+    color: #333333;
+}
+
+.atr-subtitle {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 18px;
+    color: #565656;
+}
+
+.atr-form-label {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #565656;
+}
+
+.atr-form-content {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 20px;
+    color: #333333;
+}
+
+.atr-component-whitebox {
+    border: 1px solid #d1d1d1;
+    background-color: white;
+    padding: 20px;
+}
+
+.atr-required-icon {
+    color: #DC0028;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* apply only to oj-button */
+.atr-button-highlight>button>div {
+    background-color: #DDBD85 !important;
+    color: #FFFFFF !important;
+}
+
+.atr-button-remove>button>div {
+    background-color: #e17055 !important;
+    color: #FFFFFF !important;
+}
+
+.atr-button-edit>button>div {
+    background-color: #ffeaa7 !important;
+    color: #FFFFFF !important;
+}
+
+.atr-button-secondary>button>div {
+    background-color: #FFFFFF !important;
+    color: #565656 !important;
+}
+
+/* apply only to oj-avatar */
+.atr-avatar-table .oj-avatar-initials {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 26px;
+    text-align: center;
+    color: #848484;
+}
+
+.atr-avatar-table .oj-avatar-inner {
+    background-color: #E6E6E6;
+}
+
+.atr-avatar-table .oj-avatar-outer {
+    border: 1px solid #E6E6E6;
+    background-color: #E6E6E6;
+}
+
+.atr-blur-content {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
