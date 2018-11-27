@@ -6,13 +6,12 @@
  * Your viewModel code goes here
  */
 
-class AboutViewModel {
+class CustomersViewModel {
 
     constructor() {
         let self = this;
 
     }
-
     /**
      * Optional ViewModel method invoked after the View is inserted into the
      * document DOM.  The application can put logic that requires the DOM being
@@ -39,6 +38,5 @@ class AboutViewModel {
     transitionCompleted(): void {
         // Implement if needed
     };
-
 }
-export = AboutViewModel;
+export = CustomersViewModel;

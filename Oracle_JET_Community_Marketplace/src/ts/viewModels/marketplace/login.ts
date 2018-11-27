@@ -6,7 +6,7 @@
  * Your viewModel code goes here
  */
 
-class IncidentsViewModel {
+class CustomersViewModel {
 
     constructor() {
         let self = this;
@@ -39,4 +39,4 @@ class IncidentsViewModel {
         // Implement if needed
     };
 }
-export = IncidentsViewModel;
+export = CustomersViewModel;

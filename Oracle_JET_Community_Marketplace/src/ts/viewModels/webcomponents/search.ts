@@ -8,7 +8,9 @@ import {ojInputText} from "ojs/ojinputtext";
 import {ojNavigationList} from "ojs/ojnavigationlist";
 import {ojButton} from "ojs/ojbutton";
 import {ojSelectOne, ojCombobox} from "ojs/ojselectcombobox";
+import {ojMessages} from "ojs/ojmessages";
 
+import "ojs/ojmessages";
 import "ojs/ojinputtext";
 import "ojs/ojnavigationlist";
 import "ojs/ojbutton";
@@ -32,6 +34,7 @@ class DashboardViewModel {
     public something: KnockoutObservableArray<string>;
     public keywordsValue: KnockoutObservable<BigInteger | undefined>;
     public sortValue: KnockoutObservable<string | undefined>;
+    public messages: KnockoutObservable<{ category: string; severity: string; detail: string; autoTimeout: number; }[]>;
 
     constructor() {
         let self = this;
@@ -39,7 +42,7 @@ class DashboardViewModel {
             self.marketplacetitle = ko.observable("Some Component");
             self.categoryText = ko.observable("A.I. > Chatbots");
             self.updatedText = ko.observable("v1.0 (Update 24-05-2010)");
-            self.userText = ko.observable("Soham Saputa");
+            self.userText = ko.observable("Mister Crowley");
             self.ratingText = ko.observable("3.5/5");
             self.companieNameText = ko.observable("Capgemini Portugal");
             self.votesText = ko.observable("24035 votes");
@@ -49,6 +52,16 @@ class DashboardViewModel {
             self.searchButtonText = ko.observable('SEARCH');
             self.keywordsValue = ko.observable();
             self.sortValue = ko.observable();
+
+            self.messages = ko.observable(
+                [{
+                        category: 'MARKETPLACE UNDER DEVELOPMENT',
+                        severity: 'warning',
+                        detail: 'Report any issues/bugs to info@dtrgroup.org',
+                        autoTimeout: 5000
+                    }
+                ]
+            );
 
     }
 

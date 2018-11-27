@@ -5,10 +5,47 @@ define(["require", "exports", "knockout", "./appController", "ojs/ojrouter", "oj
             var self = this;
             self.router = Router.rootInstance;
             self.router.configure({
-                'dashboard': { label: 'Dashboard', isDefault: true },
-                'incidents': { label: 'Incidents' },
-                'customers': { label: 'Customers' },
-                'about': { label: 'About' }
+                'webComponentsSearch': {
+                    label: 'Web Components Search',
+                    isDefault: true,
+                    value: 'webcomponents/search'
+                },
+                'login': {
+                    label: 'Login',
+                    value: 'marketplace/login'
+                },
+                'register': {
+                    label: 'Register',
+                    value: 'marketplace/register'
+                },
+                'about': {
+                    label: 'About',
+                    value: 'marketplace/about'
+                },
+                'accelerator': {
+                    label: 'OJET Accelerator',
+                    value: 'marketplace/accelerator'
+                },
+                'webComponentsCreate': {
+                    label: 'Web Components Create',
+                    value: 'webcomponents/create'
+                },
+                'webComponentsEdit': {
+                    label: 'Web Components Edit',
+                    value: 'webcomponents/edit'
+                },
+                'webComponentsView': {
+                    label: 'Web Components View',
+                    value: 'webcomponents/view'
+                },
+                'profileView': {
+                    label: 'Profile View',
+                    value: 'profile/view'
+                },
+                'profileEdit': {
+                    label: 'Profile Edit',
+                    value: 'profile/edit'
+                }
             });
             Router.defaults['urlAdapter'] = new Router.urlParamAdapter();
             Router.sync().then(function () {

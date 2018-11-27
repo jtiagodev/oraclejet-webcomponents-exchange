@@ -12,16 +12,47 @@ class Main {
         let self = this;
         self.router = Router.rootInstance;
         self.router.configure({
-            'login': { label: 'Login', isDefault: true },
-            'register': { label: 'Register' },
-            'about': { label: 'About' },
-            'accelerator': { label: 'Accelerator' },
-            'componentsCreate': { label: 'Web Components Create' },
-            'componentsEdit': { label: 'Web Components Edit' },
-            'componentsSearch': { label: 'Web Components Search' },
-            'componentsView': { label: 'Web Components View' },
-            'profileEdit': { label: 'Profile Edit' },
-            'profileView': { label: 'Profile View' }
+            'webComponentsSearch': {
+                label: 'Web Components Search',
+                isDefault: true,
+                value: 'webcomponents/search'
+            },
+            'login': {
+                label: 'Login',
+                value: 'marketplace/login'
+            },
+            'register': {
+                label: 'Register',
+                value: 'marketplace/register'
+            },
+            'about': {
+                label: 'About',
+                value: 'marketplace/about'
+            },
+            'accelerator': {
+                label: 'OJET Accelerator',
+                value: 'marketplace/accelerator'
+            },
+            'webComponentsCreate': {
+                label: 'Web Components Create',
+                value: 'webcomponents/create'
+            },
+            'webComponentsEdit': {
+                label: 'Web Components Edit',
+                value: 'webcomponents/edit'
+            },
+            'webComponentsView': {
+                label: 'Web Components View',
+                value: 'webcomponents/view'
+            },
+            'profileView': {
+                label: 'Profile View',
+                value: 'profile/view'
+            },
+            'profileEdit': {
+                label: 'Profile Edit',
+                value: 'profile/edit'
+            }
         });
         Router.defaults['urlAdapter'] = new Router.urlParamAdapter();
         Router.sync().then(

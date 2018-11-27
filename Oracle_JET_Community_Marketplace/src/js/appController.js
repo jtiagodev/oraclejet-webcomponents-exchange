@@ -13,12 +13,49 @@ define(["require", "exports", "knockout", "ojs/ojrouter", "./Utils", "ojs/ojarra
             var self = this;
             self.router = Router.rootInstance;
             self.router.configure({
-                'dashboard': { label: 'Dashboard', isDefault: true },
-                'incidents': { label: 'Incidents' },
-                'customers': { label: 'Customers' },
-                'about': { label: 'About' }
+                'webComponentsSearch': {
+                    label: 'Web Components Search',
+                    isDefault: true,
+                    value: 'webcomponents/search'
+                },
+                'login': {
+                    label: 'Login',
+                    value: 'marketplace/login'
+                },
+                'register': {
+                    label: 'Register',
+                    value: 'marketplace/register'
+                },
+                'about': {
+                    label: 'About',
+                    value: 'marketplace/about'
+                },
+                'accelerator': {
+                    label: 'OJET Accelerator',
+                    value: 'marketplace/accelerator'
+                },
+                'webComponentsCreate': {
+                    label: 'Web Components Create',
+                    value: 'webcomponents/create'
+                },
+                'webComponentsEdit': {
+                    label: 'Web Components Edit',
+                    value: 'webcomponents/edit'
+                },
+                'webComponentsView': {
+                    label: 'Web Components View',
+                    value: 'webcomponents/view'
+                },
+                'profileView': {
+                    label: 'Profile View',
+                    value: 'profile/view'
+                },
+                'profileEdit': {
+                    label: 'Profile Edit',
+                    value: 'profile/edit'
+                }
             });
-            // Media queries for repsonsive layouts
+            //Media queries for repsonsive layouts
             var smQuery = ResponsiveUtils.getFrameworkQuery('sm-only');
             if (smQuery) {
                 self.smScreen = ResponsiveKnockoutUtils.createMediaQueryObservable(smQuery);
@@ -30,31 +67,26 @@ define(["require", "exports", "knockout", "ojs/ojrouter", "./Utils", "ojs/ojarra
             // Navigation setup
             var navData = [
                 {
-                    name: 'Dashboard',
-                    id: 'dashboard',
+                    name: 'Marketplace',
+                    id: 'webComponentsSearch',
                     iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-chart-icon-24'
                 },
                 {
-                    name: 'Incidents',
-                    id: 'incidents',
+                    name: 'Accelerator',
+                    id: 'accelerator',
                     iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'
-                },
-                {
-                    name: 'Customers',
-                    id: 'customers',
-                    iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
                 },
                 {
                     name: 'About',
                     id: 'about',
-                    iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-info-icon-24'
+                    iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
                 }
             ];
             // Header
             // Application Name used in Branding Area
-            self.appName = ko.observable("TypeScript Starter Template");
+            self.appName = ko.observable("Community Web Component Marketplace");
             // User Info used in Global Navigation area
-            self.userLogin = ko.observable("john.hancock@oracle.com");
+            self.userLogin = ko.observable("jorge.mendes@capgemini.com");
             // Dropdown menu states
             self.menuItemSelect = function (event) {
                 var selectedOption = event.target;
