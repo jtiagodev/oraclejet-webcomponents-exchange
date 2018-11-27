@@ -4,17 +4,51 @@
  */
 import * as ko from "knockout";
 
+import {ojInputText} from "ojs/ojinputtext";
+import {ojNavigationList} from "ojs/ojnavigationlist";
+import {ojButton} from "ojs/ojbutton";
+import {ojSelectOne, ojCombobox} from "ojs/ojselectcombobox";
+
+import "ojs/ojinputtext";
+import "ojs/ojnavigationlist";
+import "ojs/ojbutton";
+import "ojs/ojselectcombobox";
+
+
 class DashboardViewModel {
-    public something: KnockoutObservable<string>;
-    public something2: KnockoutObservableArray<string>;
+    public marketplacetitle: KnockoutObservable<string>;
+    public categoryText: KnockoutObservable<string>;
+    public updatedText: KnockoutObservable<string>;
+    public userText: KnockoutObservable<string>;
+    public ratingText: KnockoutObservable<string>;
+    public companieNameText: KnockoutObservable<string>;
+    public votesText: KnockoutObservable<string>;
+    public downloadTimesText: KnockoutObservable<string>;
+    public keywordsPlaceholder: KnockoutObservable<string>;
+    public infoText: KnockoutObservable<string>;
+    public loginButtonText: KnockoutObservable<string>;
+    public downloadButtonText: KnockoutObservable<string>;
+    public searchButtonText: KnockoutObservable<string>;
+    public something: KnockoutObservableArray<string>;
+    public keywordsValue: KnockoutObservable<BigInteger | undefined>;
+    public sortValue: KnockoutObservable<string | undefined>;
 
     constructor() {
         let self = this;
-        self.something = ko.observable("This parapgraph uses content from it's own 'DashboardViewModel' Class. The module is found in the /ts folder");
-        self.something2 = ko.observableArray(["Bom dia"]);
-        /*
-         * Your viewModel code goes here
-         */
+            // Texts
+            self.marketplacetitle = ko.observable("Some Component");
+            self.categoryText = ko.observable("A.I. > Chatbots");
+            self.updatedText = ko.observable("v1.0 (Update 24-05-2010)");
+            self.userText = ko.observable("Soham Saputa");
+            self.ratingText = ko.observable("3.5/5");
+            self.companieNameText = ko.observable("Capgemini Portugal");
+            self.votesText = ko.observable("24035 votes");
+            self.downloadTimesText = ko.observable("Downloaded 3425 times");
+            self.keywordsPlaceholder = ko.observable('Find a Web Component...');
+            self.downloadButtonText = ko.observable('DOWNLOAD');
+            self.searchButtonText = ko.observable('SEARCH');
+            self.keywordsValue = ko.observable();
+            self.sortValue = ko.observable();
 
     }
 

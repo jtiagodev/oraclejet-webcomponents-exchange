@@ -32,14 +32,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1">
   <link rel="icon" href="css/images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/index.css" type="text/css" />
 
   <!-- This is the main css file for the default Alta theme -->
   <!-- injector:theme -->
   <!-- endinjector -->
 
 </head>
-
+<!--
 <body class="oj-web-applayout-body">
+  -->
+  <body>
   <!-- Template for rendering navigation items -->
   <script type="text/html" id="navTemplate">
       <li><a href="#">
@@ -48,64 +51,86 @@
       </a></li>
     </script>
 
-  <div id="globalBody" class="oj-web-applayout-page">
+  <!--div id="globalBody" class="oj-web-applayout-page"-->
     <!--
          ** Oracle JET V6.0.0 web application navigation bar and header patterns.
          ** Please see the demos under Cookbook/Patterns/App Shell: Web
          ** and the CSS documentation under Support/API Docs/Non-Component Styling
          ** on the JET website for more information on how to use this pattern.
       -->
-    <header role="banner" class="oj-web-applayout-header">
-      <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
-        <div class="oj-flex-bar-middle oj-sm-align-items-baseline">
-          <span role="img" class="oj-icon demo-oracle-icon" title="Oracle Logo" alt="Oracle Logo"></span>
-          <h1 class="oj-sm-only-hide oj-web-applayout-header-title" title="Application Name">
-            <oj-bind-text value="[[appName]]"></oj-bind-text>
-          </h1>
+      <div id="globalBody" class="marketplace-main-grid">
+        <div class="marketplace-main-header">
+            <header role="banner" class="oj-web-applayout-header">
+                <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
+                  <div class="oj-flex-bar-middle oj-sm-align-items-baseline">
+                    <span role="img" class="oj-icon demo-oracle-icon" title="Oracle Logo" alt="Oracle Logo"></span>
+                    <h1 class="oj-sm-only-hide oj-web-applayout-header-title" title="Application Name">
+                      <oj-bind-text value="[[appName]]"></oj-bind-text>
+                    </h1>
+                  </div>
+                  <div class="oj-flex-bar-end">
+                    <!-- Responsive Toolbar -->
+                    <oj-toolbar>
+                      <oj-menu-button id="userMenu" display="[[smScreen() ? 'icons' : 'all']]" chroming="half">
+                        <span>
+                          <oj-bind-text value="[[userLogin]]"></oj-bind-text>
+                        </span>
+                        <span slot="endIcon" :class="[[{'oj-icon demo-appheader-avatar': smScreen(), 'oj-component-icon oj-button-menu-dropdown-icon': !smScreen()}]]"></span>
+                        <oj-menu id="menu1" slot="menu" on-oj-action="[[menuItemSelect]]" style="display:none">
+                          <oj-option id="pref" value="pref">Preferences</oj-option>
+                          <oj-option id="help" value="help">Help</oj-option>
+                          <oj-option id="about" value="about">About</oj-option>
+                          <oj-option id="out" value="out">Sign Out</oj-option>
+                        </oj-menu>
+                      </oj-menu-button>
+                    </oj-toolbar>
+                  </div>
+                </div>
+                <div role="navigation" class="oj-web-applayout-max-width oj-web-applayout-navbar">
+                  <oj-navigation-list data="[[navDataSource]]" :class="[[{'oj-md-condense oj-md-justify-content-flex-end': !smScreen()}]]"
+                    display="[[smScreen() ? 'icons' : 'all']]" edge="top" item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('navTemplate', true)]]"
+                    selection="{{router.stateId}}">
+                  </oj-navigation-list>
+                </div>
+              </header>
         </div>
-        <div class="oj-flex-bar-end">
-          <!-- Responsive Toolbar -->
-          <oj-toolbar>
-            <oj-menu-button id="userMenu" display="[[smScreen() ? 'icons' : 'all']]" chroming="half">
-              <span>
-                <oj-bind-text value="[[userLogin]]"></oj-bind-text>
-              </span>
-              <span slot="endIcon" :class="[[{'oj-icon demo-appheader-avatar': smScreen(), 'oj-component-icon oj-button-menu-dropdown-icon': !smScreen()}]]"></span>
-              <oj-menu id="menu1" slot="menu" on-oj-action="[[menuItemSelect]]" style="display:none">
-                <oj-option id="pref" value="pref">Preferences</oj-option>
-                <oj-option id="help" value="help">Help</oj-option>
-                <oj-option id="about" value="about">About</oj-option>
-                <oj-option id="out" value="out">Sign Out</oj-option>
-              </oj-menu>
-            </oj-menu-button>
-          </oj-toolbar>
+      
+        <div class="marketplace-main-Publicity">
+      
         </div>
-      </div>
-      <div role="navigation" class="oj-web-applayout-max-width oj-web-applayout-navbar">
-        <oj-navigation-list data="[[navDataSource]]" :class="[[{'oj-md-condense oj-md-justify-content-flex-end': !smScreen()}]]"
-          display="[[smScreen() ? 'icons' : 'all']]" edge="top" item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('navTemplate', true)]]"
-          selection="{{router.stateId}}">
-        </oj-navigation-list>
-      </div>
-    </header>
-    <oj-module role="main" class="oj-web-applayout-max-width oj-web-applayout-content" config="[[moduleConfig]]">
-    </oj-module>
-    <footer class="oj-web-applayout-footer" role="contentinfo">
-      <div class="oj-web-applayout-footer-item oj-web-applayout-max-width">
-        <ul>
-          <oj-bind-for-each data="[[footerLinks]]">
-            <template>
-              <li><a :id="[[$current.data.linkId]]" :href="[[$current.data.linkTarget]]">
-                  <oj-bind-text value="[[$current.data.name]]"></oj-bind-text>
-                </a></li>
-            </template>
-          </oj-bind-for-each>
-        </ul>
-      </div>
-      <div class="oj-web-applayout-footer-item oj-web-applayout-max-width oj-text-secondary-color oj-text-sm">
-        Copyright © 2014, 2018 Oracle and/or its affiliates All rights reserved.
-      </div>
-    </footer>
+      
+        <div class="marketplace-main-componentsArea">
+            <oj-module role="main" config="[[moduleConfig]]">
+              </oj-module>
+            </div>
+
+            <div class="marketplace-main-footer">
+                <footer class="oj-web-applayout-footer" role="contentinfo">
+                    <div class="oj-web-applayout-footer-item oj-web-applayout-max-width">
+                      <ul>
+                        <oj-bind-for-each data="[[footerLinks]]">
+                          <template>
+                            <li><a :id="[[$current.data.linkId]]" :href="[[$current.data.linkTarget]]">
+                                <oj-bind-text value="[[$current.data.name]]"></oj-bind-text>
+                              </a></li>
+                          </template>
+                        </oj-bind-for-each>
+                      </ul>
+                    </div>
+                    <div class="oj-web-applayout-footer-item oj-web-applayout-max-width oj-text-secondary-color oj-text-sm">
+                      Copyright © 2014, 2018 Oracle and/or its affiliates All rights reserved.
+                    </div>
+                  </footer>
+            </div>
+          
+          </div>
+
+
+
+
+
+
+
     <oj-dialog style="display:none" id="aboutDialog" title="About">
       <div slot="body">
         The dialog window can be moved, resized and closed with the 'x' icon.
