@@ -12,10 +12,16 @@ class Main {
         let self = this;
         self.router = Router.rootInstance;
         self.router.configure({
-            'dashboard': { label: 'Dashboard', isDefault: true },
-            'incidents': { label: 'Incidents' },
-            'customers': { label: 'Customers' },
-            'about': { label: 'About' }
+            'login': { label: 'Login', isDefault: true },
+            'register': { label: 'Register' },
+            'about': { label: 'About' },
+            'accelerator': { label: 'Accelerator' },
+            'componentsCreate': { label: 'Web Components Create' },
+            'componentsEdit': { label: 'Web Components Edit' },
+            'componentsSearch': { label: 'Web Components Search' },
+            'componentsView': { label: 'Web Components View' },
+            'profileEdit': { label: 'Profile Edit' },
+            'profileView': { label: 'Profile View' }
         });
         Router.defaults['urlAdapter'] = new Router.urlParamAdapter();
         Router.sync().then(
