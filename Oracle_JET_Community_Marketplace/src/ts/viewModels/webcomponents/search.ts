@@ -18,23 +18,24 @@ import "ojs/ojselectcombobox";
 
 
 class DashboardViewModel {
-    public marketplacetitle: KnockoutObservable<string>;
-    public categoryText: KnockoutObservable<string>;
-    public updatedText: KnockoutObservable<string>;
-    public userText: KnockoutObservable<string>;
-    public ratingText: KnockoutObservable<string>;
-    public companieNameText: KnockoutObservable<string>;
-    public votesText: KnockoutObservable<string>;
-    public downloadTimesText: KnockoutObservable<string>;
-    public keywordsPlaceholder: KnockoutObservable<string>;
-    public infoText: KnockoutObservable<string>;
-    public loginButtonText: KnockoutObservable<string>;
-    public downloadButtonText: KnockoutObservable<string>;
-    public searchButtonText: KnockoutObservable<string>;
-    public something: KnockoutObservableArray<string>;
-    public keywordsValue: KnockoutObservable<BigInteger | undefined>;
-    public sortValue: KnockoutObservable<string | undefined>;
+    marketplacetitle: KnockoutObservable<string>;
+    categoryText: KnockoutObservable<string>;
+    updatedText: KnockoutObservable<string>;
+    userText: KnockoutObservable<string>;
+    ratingText: KnockoutObservable<string>;
+    companieNameText: KnockoutObservable<string>;
+    votesText: KnockoutObservable<string>;
+    downloadTimesText: KnockoutObservable<string>;
+    keywordsPlaceholder: KnockoutObservable<string>;
+    infoText: KnockoutObservable<string>;
+    loginButtonText: KnockoutObservable<string>;
+    downloadButtonText: KnockoutObservable<string>;
+    searchButtonText: KnockoutObservable<string>;
+    something: KnockoutObservableArray<string>;
+    keywordsValue: KnockoutObservable<BigInteger | undefined>;
+    sortValue: KnockoutObservable<string | undefined>;
     public messages: KnockoutObservable<{ category: string; severity: string; detail: string; autoTimeout: number; }[]>;
+    treta: KnockoutObservableArray<KnockoutObservable<{ category: string; severity: string; detail: string; autoTimeout: number; }[]>>;
 
     constructor() {
         let self = this;
