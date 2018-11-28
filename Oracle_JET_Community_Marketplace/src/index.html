@@ -33,33 +33,20 @@
     <!-- HEADER -->
     <div class="marketplace-main-header">
 
-      <div class="marketplace-main-header-logo">
-        <img src="./css/images/dtrgroup.jpg" style="height: 100px"></img>
-      </div>
 
       <div class="marketplace-main-header-marketplace">
-        <span>OJET WEB COMPONENTS MARKETPLACE</span>
-      </div>
-    
-      <div class="marketplace-main-header-powered">
-        <span>POWERED BY</span>
-      </div>
-    
-
-      <div class="marketplace-main-header-dtrgroup">
-        <span>DIGITAL TRANSFORMATION RESEARCH GROUP</span>
-      </div>
-
-      <div class="marketplace-main-header-builtfor">
-        <span>BUILT FOR</span>
+        <!-- #EE2D32 -->
+        <div>
+        <span class="atr-title" style="color: #EE2D32; border-top: 2px solid gray;">WEB COMPONENTS COMMUNITY MARKETPLACE</span>
+        </div>
+        <br>
+        <div>
+        <span class="atr-subtitle" style="color: gray; font-size: 15px;">by DIGITAL TRANSFORMATION RESEARCH GROUP™</span>
+        </div>
       </div>
 
       <div class="marketplace-main-header-oracle">
-        <img src="./css/images/oracle.png" style="height: 40px"></img>
-      </div>
-
-      <div class="marketplace-main-header-community">
-        <span>OPEN SOURCE COMMUNITY</span>
+        <img src="./css/images/oracle.png" style="height: 40px; padding-bottom: 10px;"></img> <span class="atr-title" style="color: gray"> JET</span>
       </div>
 
       <div class="marketplace-main-header-menu">
@@ -69,9 +56,15 @@
         </oj-navigation-list>
       </div>
 
-      <div class="marketplace-main-header-login" data-bind="visible: loggedIn()">
-        <oj-avatar initials='[[loggedInUserInitials]]' size='xxs' class="atradiusUserAvatar"></oj-avatar>
-        <span>Welcome, </span><span style="color: #DDBD85" data-bind="text: userName"></span>
+      <div class="marketplace-main-header-user" data-bind="visible: loggedIn()">
+        <oj-avatar initials='[[loggedInUserInitials]]' size='xs' class="atradiusUserAvatar"></oj-avatar>
+        <span class="atr-subtitle"> Welcome, </span>
+        <span class="atr-subtitle" style="color: #DDBD85" data-bind="text: userName"></span>
+      </div>
+
+      <div class="marketplace-main-header-login">
+        <oj-button data-bind="visible: loggedIn()" class="marketplace-searchbar-searchButton atr-button-highlight"><span>Logout</span></oj-button>
+        <oj-button data-bind="visible: !loggedIn()" class="marketplace-searchbar-searchButton atr-button-highlight"><span>GitHub Login</span></oj-button>
       </div>
       <!-- <header role="banner" class="oj-web-applayout-header">
                 <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
