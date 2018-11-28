@@ -6,7 +6,7 @@
 /*
  * Your application specific code will go here
  */
-define(["require", "exports", "knockout", "ojs/ojrouter", "./Utils", "ojs/ojarraydataprovider", "ojs/ojresponsiveutils", "ojs/ojresponsiveknockoututils", "ojs/ojdialog", "ojs/ojtoolbar", "ojs/ojbutton", "ojs/ojmenu", "ojs/ojnavigationlist", "ojs/ojmodule-element"], function (require, exports, ko, Router, Utils, ArrayDataProvider, ResponsiveUtils, ResponsiveKnockoutUtils) {
+define(["require", "exports", "knockout", "ojs/ojrouter", "./Utils", "ojs/ojarraydataprovider", "ojs/ojresponsiveutils", "ojs/ojresponsiveknockoututils", "ojs/ojavatar", "ojs/ojdialog", "ojs/ojtoolbar", "ojs/ojbutton", "ojs/ojmenu", "ojs/ojnavigationlist", "ojs/ojmodule-element"], function (require, exports, ko, Router, Utils, ArrayDataProvider, ResponsiveUtils, ResponsiveKnockoutUtils) {
     "use strict";
     var ControllerViewModel = /** @class */ (function () {
         function ControllerViewModel() {
@@ -86,7 +86,9 @@ define(["require", "exports", "knockout", "ojs/ojrouter", "./Utils", "ojs/ojarra
             // Application Name used in Branding Area
             self.appName = ko.observable("Community Web Component Marketplace");
             // User Info used in Global Navigation area
-            self.userLogin = ko.observable("jorge.mendes@capgemini.com");
+            self.userName = ko.observable("jorge.mendes@capgemini.com");
+            self.loggedIn = ko.observable(true);
+            self.loggedInUserInitials = ko.observable("JA");
             // Dropdown menu states
             self.menuItemSelect = function (event) {
                 var selectedOption = event.target;

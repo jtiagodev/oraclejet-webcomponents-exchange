@@ -23,8 +23,11 @@ import { ojNavigationList } from 'ojs/ojnavigationlist';
 import { ojModule } from 'ojs/ojmodule-element';
 import { ojButton } from 'ojs/ojbutton';
 import { ojOption} from 'ojs/ojoption';
+import { ojAvatar } from "ojs/ojavatar";
+
 
 // this is for requiring the actual component
+import "ojs/ojavatar";
 import "ojs/ojdialog";
 import "ojs/ojtoolbar";
 import "ojs/ojbutton";
@@ -38,7 +41,7 @@ class ControllerViewModel {
     mdScreen: KnockoutObservable<boolean>;
     moduleConfig: KnockoutObservable<ojModule['config']>;
     appName: KnockoutObservable<string>;
-    userLogin: KnockoutObservable<string>;
+    userName: KnockoutObservable<string>;
     navDataSource: ArrayDataProvider<string, object>;
     drawerParams: object;
     footerLinks: Array<object>;
@@ -46,6 +49,8 @@ class ControllerViewModel {
     menuItemSelect: ojMenu['onOjAction'];
     close: ojButton['onOjAction'];
     selectionChange: ojNavigationList<string, object>['onSelectionChanged'];
+    loggedIn: KnockoutObservable<boolean>;
+    loggedInUserInitials: KnockoutObservable<string>;
 
     constructor() {
         let self = this;
@@ -127,7 +132,9 @@ class ControllerViewModel {
         // Application Name used in Branding Area
         self.appName = ko.observable("Community Web Component Marketplace");
         // User Info used in Global Navigation area
-        self.userLogin = ko.observable("jorge.mendes@capgemini.com");
+        self.userName = ko.observable("jorge.mendes@capgemini.com");
+        self.loggedIn = ko.observable(true);
+        self.loggedInUserInitials = ko.observable("JA");
 
         // Dropdown menu states
         self.menuItemSelect = function(event) {

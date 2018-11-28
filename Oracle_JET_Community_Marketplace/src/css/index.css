@@ -2,29 +2,81 @@
   .marketplace-main-grid {
     display: grid;
     grid-template-columns: minmax(min-content, 1fr);
-    grid-template-rows: 50px 5px 50px 5px minmax(1000px, max-content) 5px 52px;
+    grid-template-rows: minmax(min-content, max-content) 20px minmax(min-content, max-content) 20px minmax(min-content, max-content) 20px minmax(min-content, max-content);
     grid-template-areas:
       "header"
       "."
-      "Publicity"
+      "headline"
       "."
-      "componentsArea"
+      "contents"
       "."
       "footer";
   }
 
-  .marketplace-main-header {
-    grid-area: header;
+ 
+
+  .marketplace-main-headline {
+    grid-area: headline;
   }
 
-  .marketplace-main-Publicity {
-    grid-area: Publicity;
-  }
-
-  .marketplace-main-componentsArea {
-    grid-area: componentsArea;
+  .marketplace-main-contents {
+    grid-area: contents;
   }
 
   .marketplace-main-footer {
     grid-area: footer;
   }
+
+  /*///////////////////////////////////////////////////////////*/
+
+  .marketplace-main-header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: minmax(min-content, 200px) 10px minmax(min-content, min-content) minmax(min-content, min-content) 1fr minmax(min-content, min-content) 1fr minmax(min-content, min-content); 
+    grid-template-rows: minmax(min-content, min-content) minmax(min-content, min-content) minmax(min-content, min-content);
+    grid-template-areas:
+    "logo marketplace . builtfor . menu . login"
+    "logo powered . oracle . menu . login"
+    "dtrgroup dtrgroup . community . menu . login";
+    border: 1px solid #d1d1d1;
+    background-color: white;
+    padding: 20px;
+  }
+
+  .marketplace-main-header-logo {
+    grid-area: logo;
+  }
+
+  .marketplace-main-header-marketplace {
+    grid-area: marketplace;
+  }
+
+  .marketplace-main-header-powered {
+    grid-area: powered;
+  }
+
+  .marketplace-main-header-dtrgroup {
+    grid-area: dtrgroup;
+  }
+  
+  .marketplace-main-header-builtfor {
+    grid-area: builtfor;
+  }
+
+  .marketplace-main-header-oracle {
+    grid-area: oracle;
+  }
+
+  .marketplace-main-header-community {
+    grid-area: community;
+  }
+
+  .marketplace-main-header-menu {
+    grid-area: menu;
+  }
+
+  .marketplace-main-header-login {
+    grid-area: login;
+  }
+
+
