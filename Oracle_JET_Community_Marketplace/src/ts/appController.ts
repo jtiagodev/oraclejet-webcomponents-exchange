@@ -34,6 +34,7 @@ import "ojs/ojbutton";
 import "ojs/ojmenu";
 import "ojs/ojnavigationlist";
 import "ojs/ojmodule-element";
+import { oj } from "@oracle/oraclejet";
 
 class ControllerViewModel {
     router: Router;
@@ -51,6 +52,8 @@ class ControllerViewModel {
     selectionChange: ojNavigationList<string, object>['onSelectionChanged'];
     loggedIn: KnockoutObservable<boolean>;
     loggedInUserInitials: KnockoutObservable<string>;
+    topRatedUsers: KnockoutObservableArray<{ name: string; company: string; country: string; uploaded: number; position?: number; }>;
+    topDownloadedComponents: KnockoutObservableArray<{ position: number; name: string; timesDownloaded: number; }>;
 
     constructor() {
         let self = this;
@@ -136,6 +139,67 @@ class ControllerViewModel {
         self.loggedIn = ko.observable(true);
         self.loggedInUserInitials = ko.observable("JA");
 
+        // TOP USERS
+        self.topRatedUsers = ko.observableArray([{
+            name: "Joninhas",
+            company: "Capgemini",
+            country: "Portugal",
+            uploaded: 20
+        },
+        {
+            name: "Bernardo",
+            company: "CROSS",
+            country: "France",
+            uploaded: 50
+        },
+        {
+            name: "Carlos",
+            company: "LIDL",
+            country: "Ukraine",
+            uploaded: 21
+        },
+        {
+            name: "Dani",
+            company: "Maroscas LDA",
+            country: "Russia",
+            uploaded: 51
+        }
+    ]);
+            // TOP DOWNLOADERS
+            self.topDownloadedComponents = ko.observableArray([{
+                position: 1,
+                name: "Component 1",
+                timesDownloaded: 20
+            },
+            {
+                position: 2,
+                name: "Component 2",
+                timesDownloaded: 50
+            },
+            {
+                position: 3,
+                name: "Component 3",
+                timesDownloaded: 21
+            },
+            {
+                position: 4,
+                name: "Component",
+                timesDownloaded: 51
+            }
+        ]);
+
+    // SORT BY UPLOADS
+    self.topRatedUsers().sort((a, b) => b.uploaded - a.uploaded);
+    // ADD THE RANKINGS
+    let posNumber: number = 1;
+    self.topRatedUsers().forEach(elem => {
+        elem.position = posNumber;
+        posNumber++;
+    }
+        );
+
+    // SOR BY DOWNLOADS
+    self.topDownloadedComponents().sort((a, b) => b.timesDownloaded - a.timesDownloaded);
         // Dropdown menu states
         self.menuItemSelect = function(event) {
             let selectedOption = event.target as ojOption;

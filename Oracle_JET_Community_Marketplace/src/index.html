@@ -16,7 +16,6 @@
   <!-- This is the main css file for the default Alta theme -->
   <!-- injector:theme -->
   <!-- endinjector -->
-
 </head>
 
 <body>
@@ -32,21 +31,18 @@
 
     <!-- HEADER -->
     <div class="marketplace-main-header">
-
-
       <div class="marketplace-main-header-marketplace">
-        <!-- #EE2D32 -->
-        <div>
-        <span class="atr-title" style="color: #EE2D32; border-top: 2px solid gray;">WEB COMPONENTS COMMUNITY MARKETPLACE</span>
-        </div>
-        <br>
-        <div>
-        <span class="atr-subtitle" style="color: gray; font-size: 15px;">by DIGITAL TRANSFORMATION RESEARCH GROUP™</span>
-        </div>
+        <span class="atr-title" style="color: #EE2D32; border-top: 2px solid gray;">WEB COMPONENTS COMMUNITY
+          MARKETPLACE</span>
+      </div>
+
+      <div class="marketplace-main-header-builtby">
+        <span class="atr-subtitle" style="color: black; font-size: 15px;">by DIGITAL TRANSFORMATION RESEARCH GROUP ™</span>
       </div>
 
       <div class="marketplace-main-header-oracle">
-        <img src="./css/images/oracle.png" style="height: 40px; padding-bottom: 10px;"></img> <span class="atr-title" style="color: gray"> JET</span>
+        <img src="./css/images/oracle.png" style="height: 40px; padding-bottom: 10px;"></img> <span class="atr-title"
+          style="color: gray"> JET</span>
       </div>
 
       <div class="marketplace-main-header-menu">
@@ -63,90 +59,85 @@
       </div>
 
       <div class="marketplace-main-header-login">
-        <oj-button data-bind="visible: loggedIn()" class="marketplace-searchbar-searchButton atr-button-highlight"><span>Logout</span></oj-button>
-        <oj-button data-bind="visible: !loggedIn()" class="marketplace-searchbar-searchButton atr-button-highlight"><span>GitHub Login</span></oj-button>
+        <div data-bind="visible: loggedIn()"></div>
+        <oj-button><span>Logout</span></oj-button>
       </div>
-      <!-- <header role="banner" class="oj-web-applayout-header">
-                <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
-                  <div class="oj-flex-bar-middle oj-sm-align-items-baseline">
-                    <span role="img" class="oj-icon demo-oracle-icon" title="Oracle Logo" alt="Oracle Logo"></span>
-                    <h1 class="oj-sm-only-hide oj-web-applayout-header-title" title="Application Name">
-                      <oj-bind-text value="[[appName]]"></oj-bind-text>
-                    </h1>
-                  </div>
-                  <div class="oj-flex-bar-end">
-
-                    <oj-toolbar>
-                      <oj-menu-button id="userMenu" display="[[smScreen() ? 'icons' : 'all']]" chroming="half">
-                        <span>
-                          <oj-bind-text value="[[userLogin]]"></oj-bind-text>
-                        </span>
-                        <span slot="endIcon" :class="[[{'oj-icon demo-appheader-avatar': smScreen(), 'oj-component-icon oj-button-menu-dropdown-icon': !smScreen()}]]"></span>
-                        <oj-menu id="menu1" slot="menu" on-oj-action="[[menuItemSelect]]" style="display:none">
-                          <oj-option id="pref" value="pref">Preferences</oj-option>
-                          <oj-option id="help" value="help">Help</oj-option>
-                          <oj-option id="about" value="about">About</oj-option>
-                          <oj-option id="out" value="out">Sign Out</oj-option>
-                        </oj-menu>
-                      </oj-menu-button>
-                    </oj-toolbar>
-                  </div>
-                </div>
-                <div role="navigation" class="oj-web-applayout-max-width oj-web-applayout-navbar">
-                  <oj-navigation-list data="[[navDataSource]]" :class="[[{'oj-md-condense oj-md-justify-content-flex-end': !smScreen()}]]"
-                    display="[[smScreen() ? 'icons' : 'all']]" edge="top" item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('navTemplate', true)]]"
-                    selection="{{router.stateId}}">
-                  </oj-navigation-list>
-                </div>
-              </header> -->
+      <div data-bind="visible: !loggedIn()">
+        <oj-button><i class="fab fa-github-square"></i> <span>GitHub Login</span></oj-button>
+      </div>
     </div>
+    <!-- END OF HEADER -->
 
     <div class="marketplace-main-headline">
-
     </div>
 
     <div class="marketplace-main-contents">
-      <oj-module role="main" config="[[moduleConfig]]">
-      </oj-module>
+      <oj-module role="main" config="[[moduleConfig]]"></oj-module>
     </div>
 
+    <!-- START OF FOOTER -->
     <div class="marketplace-main-footer">
-      <!-- <footer class="oj-web-applayout-footer" role="contentinfo">
-        <div class="oj-web-applayout-footer-item oj-web-applayout-max-width">
-          <ul>
-            <oj-bind-for-each data="[[footerLinks]]">
-              <template>
-                <li><a :id="[[$current.data.linkId]]" :href="[[$current.data.linkTarget]]">
-                    <oj-bind-text value="[[$current.data.name]]"></oj-bind-text>
-                  </a></li>
-              </template>
-            </oj-bind-for-each>
-          </ul>
-        </div>
-        <div class="oj-web-applayout-footer-item oj-web-applayout-max-width oj-text-secondary-color oj-text-sm">
-          Copyright © 2014, 2018 Oracle and/or its affiliates All rights reserved.
-        </div>
-      </footer> -->
+
+      <div class="marketplace-main-footer-aboutTitle">
+        <span class="atr-subtitle">ABOUT</span>
+      </div>
+      <div class="marketplace-main-footer-ratingTitle">
+        <span class="atr-subtitle">TOP CONTRIBUTING USERS</span>
+      </div>
+      <div class="marketplace-main-footer-downloadsTitle">
+        <span class="atr-subtitle">MOST DOWNLOADED COMPONENTS</span>
+
+      </div>
+      <div class="marketplace-main-footer-aboutContent"></div>
+      <div class="marketplace-main-footer-ratingContent">
+          <table>
+              <tbody>
+                <!-- ko foreach: topRatedUsers -->
+                    <td>
+                      <img data-bind="visible: position === 1" src="./css/images/throphy/gold.gif"></img>
+                      <img data-bind="visible: position === 2" src="./css/images/throphy/silver.gif"></img>
+                      <img data-bind="visible: position === 3" src="./css/images/throphy/bronze.gif"></img>
+                      <span data-bind="text: position"></span> <span>. </span></td>
+                    <td><img style="height: 17px" data-bind="attr: {src: './css/images/flags/' + country + '.png'}"></img> <span data-bind="text: name"></span></td>
+                    <td><span data-bind="text: uploaded"></span> <span> Uploads</span></td>
+                    </tr>
+                    <tr>
+                    <td></td>
+                    <td><span data-bind="text: company"></span></td>
+                    <td></td>
+                    </tr>
+                  <!-- /ko -->
+                </tbody>
+              </table>
+      </div>
+      <div class="marketplace-main-footer-downloadsContent"></div>
+      <table>
+          <tbody>
+            <!-- ko foreach: topDownloadedComponents -->
+                <td>
+                  <img data-bind="visible: position === 1" src="./css/images/throphy/gold.gif"></img>
+                  <img data-bind="visible: position === 2" src="./css/images/throphy/silver.gif"></img>
+                  <img data-bind="visible: position === 3" src="./css/images/throphy/bronze.gif"></img>
+                  <span data-bind="text: position"></span> <span>. </span></td>
+                <td><span data-bind="text: name"></span></td>
+                <td><span data-bind="text: timesDownloaded"></span> <span> Times Downloaded</span></td>
+                </tr>
+                <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+              <!-- /ko -->
+            </tbody>
+          </table>
+  </div>
+      <div class="marketplace-main-footer-social"></div>
     </div>
+    <!-- END OF FOOTER -->
 
   </div>
 
-
-
-
-
-
-
-  <!-- <oj-dialog style="display:none" id="aboutDialog" title="About">
-    <div slot="body">
-      The dialog window can be moved, resized and closed with the 'x' icon.
-      Arbitrary content can be added to the the body and footer sections.
-    </div>
-    <div slot="footer">
-      <oj-button id="okButton" on-oj-action="[[close]]">OK
-      </oj-button>
-    </div>
-  </oj-dialog> -->
+  </div>
   </div>
 
   <script data-main="js/require-config" src="js/libs/require/require.js"></script>

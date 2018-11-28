@@ -1,9 +1,10 @@
-/* set default fallback font to Roboto */
+// set default fallback font to Roboto 
 body {
     font-family: 'Roboto';
 }
 
-/* Avatar */
+/*
+// Avatar 
 .oj-avatar-has-initials .oj-avatar-inner {
     background-color: white;
 }
@@ -18,7 +19,8 @@ body {
     color: #848484;
 }
 
-/* Navigation Menu */
+
+// Navigation Menu 
 .oj-navigationlist-item-content .oj-navigationlist-item-label {
     font-family: Roboto Slab;
     font-style: normal;
@@ -49,7 +51,8 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
     background-color: white;
 }
 
-/* Button */
+
+// Button 
 .oj-button-label {
     background-color: #FFFFFF;
     background-image: none;
@@ -65,7 +68,7 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
 }
 
 .oj-button-label>span:first-of-type+span {
-    /* Removes annoying > on buttons */
+    // Removes annoying > on buttons 
     display: none;
 }
 
@@ -75,15 +78,15 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
     color: lightblue;
 }
 
-/* Collapsible Button Fix */
+// Collapsible Button Fix 
 .oj-button-label>span {
     margin-right: 0rem !important;
     margin-left: 0rem !important;
 }
 
-/* Select One */
+// Select One 
 .oj-select {
-    /* tweaks the stretch 1fr */
+    // tweaks the stretch 1fr 
     max-width: 5000px;
 }
 
@@ -100,7 +103,7 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
     font-family: Roboto Condensed;
 }
 
-/* oj-combobox-one */
+// oj-combobox-one 
 .oj-combobox {
     max-width: 5000px;
 }
@@ -124,9 +127,9 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
     display: none;
 }
 
-/* Input Text */
+// Input Text 
 .oj-inputtext {
-    /* tweaks the stretch 1fr */
+    // tweaks the stretch 1fr 
     max-width: 5000px;
 }
 
@@ -175,7 +178,7 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
     color: #848484;
 }
 
-/* Table */
+// Table 
 .oj-table-body-message {
     font-family: Roboto Condensed;
     font-style: normal;
@@ -199,7 +202,7 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
     padding: 20px;
     background: white;
     min-width: 940px;
-    /* 984px */
+    // 984px 
 }
 
 .oj-table-header {
@@ -219,18 +222,18 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
 }
 
 .oj-table-column-header-cell.oj-hover {
-    /* REMOVE SELECTION OF COLUMNS */
+    // REMOVE SELECTION OF COLUMNS 
     background: #FFFFFF;
     -webkit-box-shadow: inset 0px -1px 0px #CCCCCC, inset 0px 1px 0px #CCCCCC;
     box-shadow: inset 0px -1px 0px #CCCCCC, inset 0px 1px 0px #CCCCCC;
 }
 
 .oj-table-element:not(.oj-table-column-header-resizing) .oj-table-column-header-cell.oj-focus {
-    /* REMOVE SELECTION OF COLUMNS */
+    // REMOVE SELECTION OF COLUMNS 
     outline: dotted 0px;
 }
 
-/* Progress Bar */
+// Progress Bar 
 .oj-progress-bar::before {
     background: white;
 }
@@ -239,13 +242,13 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
     background: red;
 }
 
-/* Notifications */
+// Notifications 
 .oj-messages-notification {
     padding-top: 90px;
 }
 
-/* Switch - styling & hover fix */
-/* Unselected */
+// Switch - styling & hover fix 
+// Unselected 
 .oj-switch.oj-hover .oj-switch-thumb {
     background-color: #f0f0f0;
     border: 1px solid #f0f0f0;
@@ -258,7 +261,7 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
     border-color: #c4c4c4;
 }
 
-/* Selected */
+// Selected 
 .oj-switch.oj-selected.oj-hover .oj-switch-thumb {
     background-color: #C6AA77;
     border: 1px solid #C6AA77;
@@ -271,7 +274,8 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
     border-color: #e6e6e6;
 }
 
-/* Select one */
+// Select one 
 .oj-select-choice {
     background-color: #FFFFFF;
 }
+*/
