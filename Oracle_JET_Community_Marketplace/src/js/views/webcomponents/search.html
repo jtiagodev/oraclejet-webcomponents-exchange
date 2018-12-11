@@ -146,7 +146,7 @@
           </div>
 
           <div class="marketplace-user">
-            <oj-text class="marketplace-text" style="display: flex; align-items: center; justify-content: center"
+            <img style="height: 22px; position: relative; top: 4px;" src="./css/images/flags/France.png"></img><oj-text class="marketplace-text" style="justify-content: right;"
               data-bind="text: userText"></oj-text>
           </div>
 
@@ -202,9 +202,9 @@
           </div>
 
           <div class="marketplace-user">
-            <oj-text class="marketplace-text" style="display: flex; align-items: center; justify-content: center"
-              data-bind="text: userText"></oj-text>
-          </div>
+            <img style="height: 22px; position: relative; top: 4px;" src="./css/images/flags/France.png"></img><oj-text class="marketplace-text" style="justify-content: right;"
+            data-bind="text: userText"></oj-text>
+        </div>
 
           <div class="marketplace-rating">
             <oj-text class="marketplace-text" style="display: flex; align-items: center; justify-content: center"
@@ -259,9 +259,9 @@
           </div>
 
           <div class="marketplace-user">
-            <oj-text class="marketplace-text" style="display: flex; align-items: center; justify-content: center"
-              data-bind="text: userText"></oj-text>
-          </div>
+            <img style="height: 22px; position: relative; top: 4px;" src="./css/images/flags/Portugal.png"></img><oj-text class="marketplace-text" style="justify-content: right;"
+            data-bind="text: userText"></oj-text>
+        </div>
 
           <div class="marketplace-rating">
             <oj-text class="marketplace-text" style="display: flex; align-items: center; justify-content: center"
@@ -316,9 +316,9 @@
           </div>
 
           <div class="marketplace-user">
-            <oj-text class="marketplace-text" style="display: flex; align-items: center; justify-content: center"
-              data-bind="text: userText"></oj-text>
-          </div>
+            <img style="height: 22px; position: relative; top: 4px;" src="./css/images/flags/Portugal.png"></img><oj-text class="marketplace-text" style="justify-content: right;"
+            data-bind="text: userText"></oj-text>
+        </div>
 
           <div class="marketplace-rating">
             <oj-text class="marketplace-text" style="display: flex; align-items: center; justify-content: center"
@@ -476,7 +476,7 @@
   .marketplace-previewComponent-grid {
     display: grid;
     grid-template-columns: 10px 100px 10px 150px 10px 80px 10px 200px 10px;
-    grid-template-rows: 5px 30px 5px 20px 5px 300px 10px 30px 5px 30px 10px;
+    grid-template-rows: 5px 30px 5px 20px 5px 300px 10px 30px 30px 10px;
     grid-template-areas:
       ". . . . . . . . . "
       ". title title title title title title title . "
@@ -486,7 +486,6 @@
       ". Image Image Image Image Image Image Image . "
       ". . . . . . . . . "
       ". logo . user . rating . dButton . "
-      ". logo . . . . . . . "
       ". logo . cName . votes . dTimes . "
       ". . . . . . . . . ";
   }
@@ -513,10 +512,17 @@
 
   .marketplace-user {
     grid-area: user;
+    justify-self: end;
+    align-self: start;
+    position: relative;
+    top: 3px;
+    left: -2px;
   }
 
   .marketplace-rating {
     grid-area: rating;
+    justify-self: start;
+    align-self: end;
   }
 
   .marketplace-dButton {
@@ -525,13 +531,19 @@
 
   .marketplace-cName {
     grid-area: cName;
+    justify-self: start;
+    align-self: start;
   }
 
   .marketplace-votes {
     grid-area: votes;
+    justify-self: start;
+    align-self: start;
   }
 
   .marketplace-dTimes {
     grid-area: dTimes;
+    position: relative;
+    top: 5px;
   }
 </style>

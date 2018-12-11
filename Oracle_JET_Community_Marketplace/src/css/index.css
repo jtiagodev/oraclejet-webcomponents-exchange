@@ -101,7 +101,7 @@
     grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 1fr) minmax(min-content, 1fr) minmax(min-content, 1fr);
     grid-template-rows: minmax(min-content, max-content) minmax(min-content, max-content);
     grid-template-areas:
-    "aboutTitle ratingTitle downloadsTitle ."
+    "aboutTitle ratingTitle downloadsTitle socialTitle"
     "aboutContent ratingContent downloadsContent social";
     border: 1px solid #d1d1d1;
     background-color: white;
@@ -146,6 +146,13 @@
 
   .marketplace-main-footer-downloadsContent {
     grid-area: downloadsContent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .marketplace-main-footer-socialTitle {
+    grid-area: socialTitle;
     display: flex;
     align-items: center;
     justify-content: center;

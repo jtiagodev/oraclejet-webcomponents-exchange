@@ -43,7 +43,7 @@ class DashboardViewModel {
             self.marketplacetitle = ko.observable("Some Component");
             self.categoryText = ko.observable("A.I. > Chatbots");
             self.updatedText = ko.observable("v1.0 (Update 24-05-2010)");
-            self.userText = ko.observable("Mister Crowley");
+            self.userText = ko.observable(" Mister Crowley");
             self.ratingText = ko.observable("3.5/5");
             self.companieNameText = ko.observable("Capgemini Portugal");
             self.votesText = ko.observable("24035 votes");

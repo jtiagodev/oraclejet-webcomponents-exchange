@@ -84,26 +84,26 @@ define(["require", "exports", "knockout", "ojs/ojrouter", "./Utils", "ojs/ojarra
             ];
             // Header
             // Application Name used in Branding Area
-            self.appName = ko.observable("Community Web Component Marketplace");
+            self.appName = ko.observable("Community Web Component Exchange");
             // User Info used in Global Navigation area
             self.userName = ko.observable("jorge.mendes@capgemini.com");
             self.loggedIn = ko.observable(true);
             self.loggedInUserInitials = ko.observable("JA");
             // TOP USERS
             self.topRatedUsers = ko.observableArray([{
-                    name: "Joninhas",
+                    name: " João",
                     company: "Capgemini",
                     country: "Portugal",
                     uploaded: 20
                 },
                 {
-                    name: "Bernardo",
+                    name: " Bernardo",
                     company: "CROSS",
                     country: "France",
                     uploaded: 50
                 },
                 {
-                    name: "Carlos",
+                    name: " Carlos",
                     company: "LIDL",
                     country: "Ukraine",
                     uploaded: 21
@@ -117,22 +117,18 @@ define(["require", "exports", "knockout", "ojs/ojrouter", "./Utils", "ojs/ojarra
             ]);
             // TOP DOWNLOADERS
             self.topDownloadedComponents = ko.observableArray([{
-                    position: 1,
                     name: "Component 1",
                     timesDownloaded: 20
                 },
                 {
-                    position: 2,
                     name: "Component 2",
                     timesDownloaded: 50
                 },
                 {
-                    position: 3,
                     name: "Component 3",
                     timesDownloaded: 21
                 },
                 {
-                    position: 4,
                     name: "Component",
                     timesDownloaded: 51
                 }
@@ -140,13 +136,19 @@ define(["require", "exports", "knockout", "ojs/ojrouter", "./Utils", "ojs/ojarra
             // SORT BY UPLOADS
             self.topRatedUsers().sort(function (a, b) { return b.uploaded - a.uploaded; });
             // ADD THE RANKINGS
-            var posNumber = 1;
+            var posNumberRatedUsers = 1;
             self.topRatedUsers().forEach(function (elem) {
-                elem.position = posNumber;
-                posNumber++;
+                elem.position = posNumberRatedUsers;
+                posNumberRatedUsers++;
             });
             // SOR BY DOWNLOADS
-            self.topDownloadedComponents().sort(function (a, b) { return b.timesDownloaded - a.timesDownloaded; });
+            self.topDownloadedComponents().sort(function (c, d) { return c.timesDownloaded - d.timesDownloaded; });
+            // ADD THE RANKINGS
+            var posNumberDownload = 1;
+            self.topDownloadedComponents().forEach(function (elem) {
+                elem.position = posNumberDownload;
+                posNumberDownload++;
+            });
             // Dropdown menu states
             self.menuItemSelect = function (event) {
                 var selectedOption = event.target;

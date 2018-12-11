@@ -33,7 +33,7 @@
     <div class="marketplace-main-header">
       <div class="marketplace-main-header-marketplace">
         <span class="atr-title" style="color: #EE2D32; border-top: 2px solid gray;">WEB COMPONENTS COMMUNITY
-          MARKETPLACE</span>
+          EXCHANGE</span>
       </div>
 
       <div class="marketplace-main-header-builtby">
@@ -88,7 +88,14 @@
         <span class="atr-subtitle">MOST DOWNLOADED COMPONENTS</span>
 
       </div>
-      <div class="marketplace-main-footer-aboutContent"></div>
+      <div class="marketplace-main-footer-socialTitle">
+        <span class="atr-subtitle">TOP CONTRIBUTING COMPANIES</span>
+
+      </div>
+
+      <div class="marketplace-main-footer-aboutContent">
+        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+      </div>
       <div class="marketplace-main-footer-ratingContent">
           <table>
               <tbody>
@@ -98,38 +105,62 @@
                       <img data-bind="visible: position === 2" src="./css/images/throphy/silver.gif"></img>
                       <img data-bind="visible: position === 3" src="./css/images/throphy/bronze.gif"></img>
                       <span data-bind="text: position"></span> <span>. </span></td>
-                    <td><img style="height: 17px" data-bind="attr: {src: './css/images/flags/' + country + '.png'}"></img> <span data-bind="text: name"></span></td>
+                    <td><img style="height: 17px" data-bind="attr: {src: './css/images/flags/' + country + '.png'}"></img> <strong><span data-bind="text: name"></span></strong></td>
                     <td><span data-bind="text: uploaded"></span> <span> Uploads</span></td>
                     </tr>
                     <tr>
                     <td></td>
-                    <td><span data-bind="text: company"></span></td>
+                    <td><span class="marketplace-subtext" data-bind="text: company"></span></td>
                     <td></td>
                     </tr>
                   <!-- /ko -->
                 </tbody>
               </table>
       </div>
-      <div class="marketplace-main-footer-downloadsContent"></div>
-      <table>
+      <div class="marketplace-main-footer-downloadsContent">
+        <table>
           <tbody>
-            <!-- ko foreach: topDownloadedComponents -->
+            <!-- ko foreach: topRatedUsers -->
                 <td>
                   <img data-bind="visible: position === 1" src="./css/images/throphy/gold.gif"></img>
                   <img data-bind="visible: position === 2" src="./css/images/throphy/silver.gif"></img>
                   <img data-bind="visible: position === 3" src="./css/images/throphy/bronze.gif"></img>
                   <span data-bind="text: position"></span> <span>. </span></td>
-                <td><span data-bind="text: name"></span></td>
-                <td><span data-bind="text: timesDownloaded"></span> <span> Times Downloaded</span></td>
+                <td><img style="height: 17px" data-bind="attr: {src: './css/images/flags/' + country + '.png'}"></img> <strong><span data-bind="text: name"></span></strong></td>
+                <td><span data-bind="text: uploaded"></span> <span> Downloads</span></td>
                 </tr>
                 <tr>
                 <td></td>
-                <td></td>
+                <td><span class="marketplace-subtext" data-bind="text: company"></span></td>
                 <td></td>
                 </tr>
               <!-- /ko -->
             </tbody>
           </table>
+        </div>
+
+        <div class="marketplace-main-footer-social">
+          <table>
+            <tbody>
+              <!-- ko foreach: topRatedUsers -->
+                  <td>
+                    <img data-bind="visible: position === 1" src="./css/images/throphy/gold.gif"></img>
+                    <img data-bind="visible: position === 2" src="./css/images/throphy/silver.gif"></img>
+                    <img data-bind="visible: position === 3" src="./css/images/throphy/bronze.gif"></img>
+                    <span data-bind="text: position"></span> <span>. </span></td>
+                  <td><img style="height: 17px" data-bind="attr: {src: './css/images/flags/' + country + '.png'}"></img> <strong><span data-bind="text: name"></span></strong></td>
+                  <td><span data-bind="text: uploaded"></span> <span> Downloads</span></td>
+                  </tr>
+                  <tr>
+                  <td></td>
+                  <td><span class="marketplace-subtext" data-bind="text: company"></span></td>
+                  <td></td>
+                  </tr>
+                <!-- /ko -->
+              </tbody>
+            </table>
+          </div>
+
   </div>
       <div class="marketplace-main-footer-social"></div>
     </div>
