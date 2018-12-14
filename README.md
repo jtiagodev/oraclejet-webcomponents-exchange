@@ -1,40 +1,40 @@
 # ORACLE JET - WEB COMPONENTS COMMUNITY EXCHANGE
 
-![alt text](https://ibb.co/PFZgWKm)
+![alt text](http://i66.tinypic.com/28720y0.png)
 
 ## Functional Requirements
 
 •	Platform<br />
-  o	GitHub Sign in<br />
-  o	Profile <br />
-    	Creation<br />
-    	View<br />
-    	Edit<br />
-  o	Internationalization Support<br />
+__•	GitHub Sign in<br />
+__•	Profile <br />
+____•	Creation<br />
+____•	View<br />
+____•	Edit<br />
+__•	Internationalization Support<br />
 •	Joining an existing organization<br />
 •	Adding a new organization<br />
-  o	Events<br />
-    	OJET Hackathons<br />
-  o	About<br />
-    	List of contributors & curators <br />
+__•	Events<br />
+____•	OJET Hackathons<br />
+__•	About<br />
+____•	List of contributors & curators <br />
 •	Web Components<br />
-  o	Adding a new web component<br />
-  o	Editing an existing web component details<br />
-  o	Searching web components in the public exchange<br />
-  o	Viewing a web component details<br />
-    	Description & Install Instructions<br />
-    	Rating<br />
-    	Statistics (# downloads, etc)<br />
-    	Support Policy<br />
-    	API Documentation<br />
-    	Live Demo<br />
-    	Typical Use Cases<br />
-    	Screenshots<br />
-    	Change Log<br />
+__•	Adding a new web component<br />
+__•	Editing an existing web component details<br />
+__•	Searching web components in the public exchange<br />
+__•	Viewing a web component details<br />
+____•	Description & Install Instructions<br />
+____•	Rating<br />
+____•	Statistics (# downloads, etc)<br />
+____•	Support Policy<br />
+____•	API Documentation<br />
+____•	Live Demo<br />
+____•	Typical Use Cases<br />
+____•	Screenshots<br />
+____•	Change Log<br />
 •	Administration<br />
-  o	Manage Users<br />
-  o	Manage Components<br />
-    	Validate new component uploads<br />
+__•	Manage Users<br />
+__•	Manage Components<br />
+____•	Validate new component uploads<br />
 
 ## List of contributors
 
