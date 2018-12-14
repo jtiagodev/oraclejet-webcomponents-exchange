@@ -70,7 +70,7 @@ class DashboardViewModel {
                         category: 'MARKETPLACE UNDER DEVELOPMENT',
                         severity: 'warning',
                         detail: 'Report any issues/bugs to info@dtrgroup.org',
-                        autoTimeout: 5000
+                        autoTimeout: 1000
                     }
                 ]
             );
