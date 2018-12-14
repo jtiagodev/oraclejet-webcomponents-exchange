@@ -4,54 +4,54 @@
 
 ## Functional Requirements
 
-•	Platform
-  o	GitHub Sign in
-  o	Profile 
-    	Creation
-    	View
-    	Edit
-  o	Internationalization Support
-•	Joining an existing organization
-•	Adding a new organization
-  o	Events
-    	OJET Hackathons
-  o	About
-    	List of contributors & curators 
-•	Web Components
-  o	Adding a new web component
-  o	Editing an existing web component details
-  o	Searching web components in the public exchange
-  o	Viewing a web component details
-    	Description & Install Instructions
-    	Rating
-    	Statistics (# downloads, etc)
-    	Support Policy
-    	API Documentation
-    	Live Demo
-    	Typical Use Cases
-    	Screenshots
-    	Change Log
-•	Administration
-  o	Manage Users
-  o	Manage Components
-    	Validate new component uploads
+•	Platform<br />
+  o	GitHub Sign in<br />
+  o	Profile <br />
+    	Creation<br />
+    	View<br />
+    	Edit<br />
+  o	Internationalization Support<br />
+•	Joining an existing organization<br />
+•	Adding a new organization<br />
+  o	Events<br />
+    	OJET Hackathons<br />
+  o	About<br />
+    	List of contributors & curators <br />
+•	Web Components<br />
+  o	Adding a new web component<br />
+  o	Editing an existing web component details<br />
+  o	Searching web components in the public exchange<br />
+  o	Viewing a web component details<br />
+    	Description & Install Instructions<br />
+    	Rating<br />
+    	Statistics (# downloads, etc)<br />
+    	Support Policy<br />
+    	API Documentation<br />
+    	Live Demo<br />
+    	Typical Use Cases<br />
+    	Screenshots<br />
+    	Change Log<br />
+•	Administration<br />
+  o	Manage Users<br />
+  o	Manage Components<br />
+    	Validate new component uploads<br />
 
 ## List of contributors
 
-Product Owners
-♠ORACLE John Brock (Senior Manager of Product Management @Oracle)
-♠ORACLE Geertjan Wielenga (Senior Principal Product Manager @Oracle)
+Product Owners<br />
+♠ORACLE John Brock (Senior Manager of Product Management @Oracle)<br />
+♠ORACLE Geertjan Wielenga (Senior Principal Product Manager @Oracle)<br />
 
-Program Director
-João Tiago
+Program Director<br />
+João Tiago<br />
 
-Solution Architects
-Carlos Santos (Solutions Architect @Capgemini)
+Solution Architects<br />
+Carlos Santos (Solutions Architect @Capgemini)<br />
 
-Head Developers
-♠ACE José Rodrigues (Business Manager @Link Consulting)
+Head Developers<br />
+♠ACE José Rodrigues (Business Manager @Link Consulting)<br />
 
-Developers
-Bernardo Reis (Junior Developer @Capgemini)
-Rita Teixeira (UI/UX)
+Developers<br />
+Bernardo Reis (Junior Developer @Capgemini)<br />
+Rita Teixeira (UI/UX)<br />
 
