@@ -1,20 +1,9 @@
-/**
- * @license
- * Copyright (c) 2014, 2018, Oracle and/or its affiliates.
- * The Universal Permissive License (UPL), Version 1.0
- */
-/*
- * Your application specific code will go here
- */
-
-
 import * as ko from "knockout";
 import Router = require("ojs/ojrouter");
 import Utils = require('./Utils');
 import ArrayDataProvider = require('ojs/ojarraydataprovider');
 import * as ResponsiveUtils from 'ojs/ojresponsiveutils';
 import ResponsiveKnockoutUtils = require('ojs/ojresponsiveknockoututils');
-
 
 //###Component imports###
 import { ojDialog } from "ojs/ojdialog";
@@ -24,7 +13,6 @@ import { ojModule } from 'ojs/ojmodule-element';
 import { ojButton } from 'ojs/ojbutton';
 import { ojOption} from 'ojs/ojoption';
 import { ojAvatar } from "ojs/ojavatar";
-
 
 // this is for requiring the actual component
 import "ojs/ojavatar";
@@ -57,6 +45,8 @@ class ControllerViewModel {
 
     constructor() {
         let self = this;
+
+        // Router Configuration
         self.router = Router.rootInstance;
         self.router.configure({
             'webComponentsSearch': {
@@ -66,19 +56,19 @@ class ControllerViewModel {
             },
             'login': {
                 label: 'Login',
-                value: 'marketplace/login'
+                value: 'exchange/login'
             },
             'register': {
                 label: 'Register',
-                value: 'marketplace/register'
+                value: 'exchange/register'
             },
             'about': {
                 label: 'About',
-                value: 'marketplace/about'
+                value: 'exchange/about'
             },
             'accelerator': {
                 label: 'OJET Accelerator',
-                value: 'marketplace/accelerator'
+                value: 'exchange/accelerator'
             },
             'webComponentsCreate': {
                 label: 'Web Components Create',
@@ -99,6 +89,10 @@ class ControllerViewModel {
             'profileEdit': {
                 label: 'Profile Edit',
                 value: 'profile/edit'
+            },
+            'events': {
+                label: 'Events',
+                value: 'events/view'
             }
         });
 
@@ -112,17 +106,22 @@ class ControllerViewModel {
             self.mdScreen = ResponsiveKnockoutUtils.createMediaQueryObservable(mdQuery);
         }
 
-        // Navigation setup
+        // Header Navigation setup
         let navData = [
             {
-                name: 'Marketplace',
+                name: 'Components Exchange',
                 id: 'webComponentsSearch',
                 iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-chart-icon-24'
             },
+            // {
+            //     name: 'Accelerator',
+            //     id: 'accelerator',
+            //     iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'
+            // },
             {
-                name: 'Accelerator',
-                id: 'accelerator',
-                iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'
+                name: 'Events',
+                id: 'events',
+                iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
             },
             {
                 name: 'About',
@@ -135,9 +134,12 @@ class ControllerViewModel {
         // Application Name used in Branding Area
         self.appName = ko.observable("Community Web Component Exchange");
         // User Info used in Global Navigation area
-        self.userName = ko.observable("jorge.mendes@capgemini.com");
+        self.userName = ko.observable("Jorge Mendes");
         self.loggedIn = ko.observable(true);
-        self.loggedInUserInitials = ko.observable("JA");
+        self.loggedInUserInitials = ko.computed(function () {
+            const numOfNames = self.userName().split(" ").length;
+            return self.userName().split(" ")[0].charAt(0).toUpperCase() + self.userName().split(" ")[numOfNames-1].charAt(0).toUpperCase();
+          }, self); 
 
         // TOP USERS
         self.topRatedUsers = ko.observableArray([{
@@ -148,19 +150,19 @@ class ControllerViewModel {
         },
         {
             name: " Bernardo",
-            company: "CROSS",
+            company: "Capgemini",
             country: "France",
             uploaded: 50
         },
         {
             name: " Carlos",
-            company: "LIDL",
+            company: "AMIS",
             country: "Ukraine",
             uploaded: 21
         },
         {
             name: "Dani",
-            company: "Maroscas LDA",
+            company: "Red Samurai",
             country: "Russia",
             uploaded: 51
         }

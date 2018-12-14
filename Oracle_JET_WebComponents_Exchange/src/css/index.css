@@ -37,11 +37,10 @@
     grid-area: header;
     display: grid;
     grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 1fr) minmax(min-content, 1fr);
-    grid-template-rows: minmax(min-content, min-content) minmax(min-content, min-content) minmax(min-content, min-content);
+    grid-template-rows: minmax(min-content, min-content) minmax(min-content, min-content);
     grid-template-areas:
     "oracle menu user"
-    "marketplace menu user"
-    "builtby menu login";
+    "marketplace menu login";
     border: 1px solid #d1d1d1;
     background-color: white;
     padding: 20px;

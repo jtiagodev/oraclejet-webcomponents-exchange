@@ -77,14 +77,14 @@
                       </div>
             
                       <div class="marketplace-user">
-                        <img style="height: 22px; position: relative; top: 4px;" data-bind="attr: {src: './css/images/flags/' + usercountry + '.png'}"></img><oj-text class="marketplace-text" style="justify-content: right;"
-                          data-bind="text: username"></oj-text>
+                        <img style="height: 22px; position: relative; top: 4px;" data-bind="attr: {src: './css/images/flags/' + usercountry + '.png'}"></img>
+                        <oj-text class="marketplace-text" style="justify-content: right;" data-bind="text: username"></oj-text>
                       </div>
             
                       <div class="marketplace-rating">
-                        <oj-text class="marketplace-text" style="display: flex; align-items: center; justify-content: center"
-                          data-bind="text: rating"></oj-text>
-                          <oj-text class="marketplace-text" style="display: flex; align-items: center; justify-content: center">/5</oj-text>
+                          <div class="marketplace-text" style="display: flex; align-items: center; justify-content: center">
+                              <span><oj-text data-bind="text: rating"></oj-text>/5</span>
+                          </div>
                       </div>
             
                       <oj-button class="marketplace-dButton atr-button-highlight"><span data-bind="text: $parent.downloadButton"></span></oj-button>
@@ -95,16 +95,15 @@
                       </div>
             
                       <div class="marketplace-votes">
-                        <oj-text class="marketplace-subtext" style="display: flex; align-items: center; justify-content: center"
-                          data-bind="text: votes"></oj-text>
-                          <oj-text class="marketplace-subtext" style="display: flex; align-items: center; justify-content: center"> votes</oj-text>
+                          <div class="marketplace-subtext" style="display: flex; align-items: center; justify-content: center">
+                              <span><oj-text data-bind="text: votes"></oj-text> votes</span>
+                          </div>
                       </div>
             
                       <div class="marketplace-dTimes">
-                          <span class="marketplace-subtext" style="display: flex; align-items: center; justify-content: center">Downloaded </span>
-                        <oj-text class="marketplace-subtext" style="display: flex; align-items: center; justify-content: center"
-                          data-bind="text: downloads"></oj-text>
-                          <span class="marketplace-subtext" style="display: flex; align-items: center; justify-content: center"> times</span>
+                        <div class="marketplace-subtext" style="display: flex; align-items: center; justify-content: center">
+                            <span>Downloaded <oj-text data-bind="text: downloads"></oj-text> times</span>
+                        </div>
                       </div>
 
       </div>
@@ -200,6 +199,7 @@
 
   .marketplace-grid-components-list {
     grid-area: components;
+    display: flex;
   }
 
   .marketplace-searchbar-components {

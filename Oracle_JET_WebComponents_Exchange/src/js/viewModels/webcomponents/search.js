@@ -35,18 +35,18 @@ define(["require", "exports", "knockout", "ojs/ojarraydataprovider", "ojs/ojresp
             }
             var categories = [
                 {
-                    name: 'Marketplace',
-                    id: 'webComponentsSearch',
+                    name: 'Artificial Intelligence',
+                    id: 'ai',
                     iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-chart-icon-24'
                 },
                 {
-                    name: 'Accelerator',
-                    id: 'accelerator',
+                    name: 'Maps',
+                    id: 'maps',
                     iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'
                 },
                 {
-                    name: 'About',
-                    id: 'about',
+                    name: 'Forms',
+                    id: 'forms',
                     iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
                 }
             ];
@@ -54,6 +54,19 @@ define(["require", "exports", "knockout", "ojs/ojarraydataprovider", "ojs/ojresp
             self.downloadButton = ko.observable('Download');
             // TOP USERS
             self.components = ko.observableArray([{
+                    title: "Some Component",
+                    category: "AI > Chatbots",
+                    updated: "v1.0 (Updated 24.05.2018)",
+                    image: "teste",
+                    companylogo: "cap_logo",
+                    username: "Mister Crowley",
+                    usercountry: "France",
+                    rating: "3.5",
+                    companyname: "Capgemini",
+                    votes: "2352",
+                    downloads: "325"
+                },
+                {
                     title: "Some Component",
                     category: "AI > Chatbots",
                     updated: "v1.0 (Updated 24.05.2018)",

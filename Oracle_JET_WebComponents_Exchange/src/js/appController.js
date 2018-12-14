@@ -1,16 +1,9 @@
-/**
- * @license
- * Copyright (c) 2014, 2018, Oracle and/or its affiliates.
- * The Universal Permissive License (UPL), Version 1.0
- */
-/*
- * Your application specific code will go here
- */
 define(["require", "exports", "knockout", "ojs/ojrouter", "./Utils", "ojs/ojarraydataprovider", "ojs/ojresponsiveutils", "ojs/ojresponsiveknockoututils", "ojs/ojavatar", "ojs/ojdialog", "ojs/ojtoolbar", "ojs/ojbutton", "ojs/ojmenu", "ojs/ojnavigationlist", "ojs/ojmodule-element"], function (require, exports, ko, Router, Utils, ArrayDataProvider, ResponsiveUtils, ResponsiveKnockoutUtils) {
     "use strict";
     var ControllerViewModel = /** @class */ (function () {
         function ControllerViewModel() {
             var self = this;
+            // Router Configuration
             self.router = Router.rootInstance;
             self.router.configure({
                 'webComponentsSearch': {
@@ -20,19 +13,19 @@ define(["require", "exports", "knockout", "ojs/ojrouter", "./Utils", "ojs/ojarra
                 },
                 'login': {
                     label: 'Login',
-                    value: 'marketplace/login'
+                    value: 'exchange/login'
                 },
                 'register': {
                     label: 'Register',
-                    value: 'marketplace/register'
+                    value: 'exchange/register'
                 },
                 'about': {
                     label: 'About',
-                    value: 'marketplace/about'
+                    value: 'exchange/about'
                 },
                 'accelerator': {
                     label: 'OJET Accelerator',
-                    value: 'marketplace/accelerator'
+                    value: 'exchange/accelerator'
                 },
                 'webComponentsCreate': {
                     label: 'Web Components Create',
@@ -53,6 +46,10 @@ define(["require", "exports", "knockout", "ojs/ojrouter", "./Utils", "ojs/ojarra
                 'profileEdit': {
                     label: 'Profile Edit',
                     value: 'profile/edit'
+                },
+                'events': {
+                    label: 'Events',
+                    value: 'events/view'
                 }
             });
             //Media queries for repsonsive layouts
@@ -64,17 +61,22 @@ define(["require", "exports", "knockout", "ojs/ojrouter", "./Utils", "ojs/ojarra
             if (mdQuery) {
                 self.mdScreen = ResponsiveKnockoutUtils.createMediaQueryObservable(mdQuery);
             }
-            // Navigation setup
+            // Header Navigation setup
             var navData = [
                 {
-                    name: 'Marketplace',
+                    name: 'Components Exchange',
                     id: 'webComponentsSearch',
                     iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-chart-icon-24'
                 },
+                // {
+                //     name: 'Accelerator',
+                //     id: 'accelerator',
+                //     iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'
+                // },
                 {
-                    name: 'Accelerator',
-                    id: 'accelerator',
-                    iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'
+                    name: 'Events',
+                    id: 'events',
+                    iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
                 },
                 {
                     name: 'About',
@@ -86,9 +88,12 @@ define(["require", "exports", "knockout", "ojs/ojrouter", "./Utils", "ojs/ojarra
             // Application Name used in Branding Area
             self.appName = ko.observable("Community Web Component Exchange");
             // User Info used in Global Navigation area
-            self.userName = ko.observable("jorge.mendes@capgemini.com");
+            self.userName = ko.observable("Jorge Mendes");
             self.loggedIn = ko.observable(true);
-            self.loggedInUserInitials = ko.observable("JA");
+            self.loggedInUserInitials = ko.computed(function () {
+                var numOfNames = self.userName().split(" ").length;
+                return self.userName().split(" ")[0].charAt(0).toUpperCase() + self.userName().split(" ")[numOfNames - 1].charAt(0).toUpperCase();
+            }, self);
             // TOP USERS
             self.topRatedUsers = ko.observableArray([{
                     name: " João",
@@ -98,19 +103,19 @@ define(["require", "exports", "knockout", "ojs/ojrouter", "./Utils", "ojs/ojarra
                 },
                 {
                     name: " Bernardo",
-                    company: "CROSS",
+                    company: "Capgemini",
                     country: "France",
                     uploaded: 50
                 },
                 {
                     name: " Carlos",
-                    company: "LIDL",
+                    company: "AMIS",
                     country: "Ukraine",
                     uploaded: 21
                 },
                 {
                     name: "Dani",
-                    company: "Maroscas LDA",
+                    company: "Red Samurai",
                     country: "Russia",
                     uploaded: 51
                 }
