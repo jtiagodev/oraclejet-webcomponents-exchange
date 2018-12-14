@@ -1,7 +1,7 @@
 {
-  "name": "Oracle_JET_Community_Marketplace",
+  "name": "Oracle_JET_WebComponents_Exchange",
   "version": "1.0.0",
-  "description": "Community Driven Marketplace for Oracle JET Components",
+  "description": "Community Driven Exchange for Oracle JET Web Components",
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "@oracle/offline-persistence-toolkit": "^1.1.6",
@@ -53,9 +53,9 @@
     "minify": "minify ../webapp/js/resources -d ../webapp/js/resources",
     "build": "ojet build",
     "serve": "ojet serve",
-    "mpbuild": "ojet build --theme=OJETMarketplace:web --sass",
-    "mpserve": "ojet serve --theme=OJETMarketplace:web --sass",
-    "marketplace": "ojet serve --theme=OJETMarketplace:web --sass"
+    "ecbuild": "ojet build --theme=OJETMarketplace:web --sass",
+    "ecserve": "ojet serve --theme=OJETMarketplace:web --sass",
+    "exchange": "ojet serve --theme=OJETMarketplace:web --sass"
   },
   "browserslist": [
     "last 1 version",

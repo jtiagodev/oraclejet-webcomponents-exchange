@@ -3,6 +3,10 @@
  * The Universal Permissive License (UPL), Version 1.0
  */
 import * as ko from "knockout";
+//import Utils = require('./Utils');
+import ArrayDataProvider = require('ojs/ojarraydataprovider');
+import * as ResponsiveUtils from 'ojs/ojresponsiveutils';
+import ResponsiveKnockoutUtils = require('ojs/ojresponsiveknockoututils');
 
 import {ojInputText} from "ojs/ojinputtext";
 import {ojNavigationList} from "ojs/ojnavigationlist";
@@ -36,7 +40,12 @@ class DashboardViewModel {
     sortValue: KnockoutObservable<string | undefined>;
     public messages: KnockoutObservable<{ category: string; severity: string; detail: string; autoTimeout: number; }[]>;
     treta: KnockoutObservableArray<KnockoutObservable<{ category: string; severity: string; detail: string; autoTimeout: number; }[]>>;
-
+    navDataCategories: ArrayDataProvider<string, object>;
+    components: KnockoutObservableArray<object>;
+    smScreen: KnockoutObservable<boolean>;
+    mdScreen: KnockoutObservable<boolean>;
+    downloadButton: KnockoutObservable<string>;
+    
     constructor() {
         let self = this;
             // Texts
@@ -63,6 +72,54 @@ class DashboardViewModel {
                     }
                 ]
             );
+
+                    //Media queries for repsonsive layouts
+        let smQuery = ResponsiveUtils.getFrameworkQuery('sm-only');
+        if (smQuery) {
+            self.smScreen = ResponsiveKnockoutUtils.createMediaQueryObservable(smQuery);
+        }
+        let mdQuery = ResponsiveUtils.getFrameworkQuery('md-up');
+        if (mdQuery) {
+            self.mdScreen = ResponsiveKnockoutUtils.createMediaQueryObservable(mdQuery);
+        }
+
+
+            let categories = [
+                {
+                    name: 'Marketplace',
+                    id: 'webComponentsSearch',
+                    iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-chart-icon-24'
+                },
+                {
+                    name: 'Accelerator',
+                    id: 'accelerator',
+                    iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'
+                },
+                {
+                    name: 'About',
+                    id: 'about',
+                    iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
+                }
+            ];
+            self.navDataCategories = new ArrayDataProvider(categories, { keyAttributes: 'id' });
+
+        self.downloadButton = ko.observable('Download');
+
+        // TOP USERS
+        self.components = ko.observableArray([{
+            title: "Some Component",
+            category: "AI > Chatbots",
+            updated: "v1.0 (Updated 24.05.2018)",
+            image: "teste",
+            companylogo: "cap_logo",
+            username: "Mister Crowley",
+            usercountry: "France",
+            rating: "3.5",
+            companyname: "Capgemini",
+            votes: "2352",
+            downloads: "325"
+        }
+    ]);
 
     }
 

@@ -1,0 +1,302 @@
+<!-- <ojet-loading data-bind="visible: !loaded()"></ojet-loading>
+<ojet-errorloading data-bind="visible: errorloading()"></ojet-errorloading> -->
+<oj-messages messages="[[messages]]" position="{}" display="notification"></oj-messages>
+
+    <div class="marketplace-grid-components">
+
+    <!-- Template for rendering navigation items shared between nav bar and nav list -->
+    <script type="text/html" id="navTemplate">
+      <li><a href="#">
+          <span :class="[[$data['iconClass']]]"></span>
+          <oj-bind-text value="[[$data['name']]]"></oj-bind-text>
+        </a></li>
+      </script>
+
+      
+      <div class="atr-component-whitebox marketplace-grid-menu1">
+          <oj-navigation-list 
+          data="[[navDataCategories]]" 
+          :class="[[{'oj-md-condense oj-md-justify-content-flex-end': !smScreen()}]]"
+          display="[[smScreen() ? 'icons' : 'all']]" 
+          edge="start" 
+          item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('navTemplate', true)]]">
+          <!--selection="{{categoriesRouter.stateId}}"-->
+        </oj-navigation-list>
+
+      </div>
+
+      <div class="marketplace-grid-searchBar">
+
+        <div class="atr-component-whitebox marketplace-searchbar-components">
+
+          <div class="marketplace-searchbar-filter">
+            <oj-input-text style="height: 100px" data-bind="attr: {placeholder: keywordsPlaceholder}" value="{{keywordsValue}}"
+              required></oj-input-text>
+          </div>
+
+          <oj-button class="marketplace-searchbar-searchButton atr-button-highlight"><span data-bind="text: searchButtonText"></span></oj-button>
+
+          <div class="help-item-center marketplace-searchbar-dropdown">
+            <oj-select-one value="{{sortValue}}">
+              <oj-option value="All">Sort: Newest Items</oj-option>
+              <oj-option value="rat">Rating</oj-option>
+              <oj-option value="dow">Downloads</oj-option>
+            </oj-select-one>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="help-item-center atr-component-whitebox marketplace-grid-components-list">
+
+
+                <!-- ko foreach: components  -->
+                <div class="help-item-center marketplace-previewComponent-grid">
+
+                    <div class="marketplace-title">
+                        <span class="marketplace-title" data-bind="text: title"></span>
+                      </div>
+            
+                      <div class="marketplace-c">
+                        <oj-text class="marketplace-subtext" style="display: flex; align-items: left; justify-content: left"
+                          data-bind="text: category"></oj-text>
+                      </div>
+            
+                      <div class="marketplace-updated">
+                        <oj-text class="marketplace-subtext" style="display: flex; align-items: right; justify-content: right"
+                          data-bind="text: updated"></oj-text>
+                      </div>
+            
+                      <div class="marketplace-Image">
+                        <img style="width: 560px; height:300px" data-bind="attr: {src: './css/images/' + image + '.png'}">
+                      </div>
+            
+                      <div class="help-item-center marketplace-logo">
+                        <img style="width: 90px; height:60px" data-bind="attr: {src: './css/images/' + companylogo + '.png'}">
+                      </div>
+            
+                      <div class="marketplace-user">
+                        <img style="height: 22px; position: relative; top: 4px;" data-bind="attr: {src: './css/images/flags/' + usercountry + '.png'}"></img><oj-text class="marketplace-text" style="justify-content: right;"
+                          data-bind="text: username"></oj-text>
+                      </div>
+            
+                      <div class="marketplace-rating">
+                        <oj-text class="marketplace-text" style="display: flex; align-items: center; justify-content: center"
+                          data-bind="text: rating"></oj-text>
+                          <oj-text class="marketplace-text" style="display: flex; align-items: center; justify-content: center">/5</oj-text>
+                      </div>
+            
+                      <oj-button class="marketplace-dButton atr-button-highlight"><span data-bind="text: $parent.downloadButton"></span></oj-button>
+            
+                      <div class="marketplace-cName">
+                        <oj-text class="marketplace-subtext" style="display: flex; align-items: center; justify-content: center"
+                          data-bind="text: companyname"></oj-text>
+                      </div>
+            
+                      <div class="marketplace-votes">
+                        <oj-text class="marketplace-subtext" style="display: flex; align-items: center; justify-content: center"
+                          data-bind="text: votes"></oj-text>
+                          <oj-text class="marketplace-subtext" style="display: flex; align-items: center; justify-content: center"> votes</oj-text>
+                      </div>
+            
+                      <div class="marketplace-dTimes">
+                          <span class="marketplace-subtext" style="display: flex; align-items: center; justify-content: center">Downloaded </span>
+                        <oj-text class="marketplace-subtext" style="display: flex; align-items: center; justify-content: center"
+                          data-bind="text: downloads"></oj-text>
+                          <span class="marketplace-subtext" style="display: flex; align-items: center; justify-content: center"> times</span>
+                      </div>
+
+      </div>
+      <!-- /ko -->
+
+    </div>
+
+  
+
+<!-- //////////////////////////////////////////////////////////////////////////////// CSS ////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<style>
+  .help-item-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .help-item-right {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+  }
+
+  .help-item-left {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+  }
+
+  .help-item-title {
+    display: flex;
+    align-items: end;
+    justify-content: start;
+  }
+
+  .help-item-subtitle {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+  }
+
+  .marketplace-text {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 20px;
+    color: black;
+  }
+
+  .marketplace-subtext {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 15px;
+    color: grey;
+  }
+
+  .marketplace-title {
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 25px;
+    color: black;
+  }
+
+
+
+  .marketplace-grid-components {
+    padding: 0px 20px 0px 20px;
+    display: grid;
+    grid-area: componentsArea;
+    grid-template-columns: minmax(min-content, 400px) 5px minmax(min-content, 1fr);
+    grid-template-rows: 100px minmax(min-content, 1fr);
+    grid-template-areas:
+      "menu1 . searchBar"
+      "menu1 . ."
+      "menu1 . components";
+      }
+
+
+  .marketplace-grid-menu1 {
+    grid-area: menu1;
+  }
+
+  .marketplace-grid-searchBar {
+    grid-area: searchBar;
+  }
+
+  .marketplace-grid-components-list {
+    grid-area: components;
+  }
+
+  .marketplace-searchbar-components {
+    display: grid;
+    grid-area: searchBar;
+    grid-template-columns: 1055px 5px 140px;
+    grid-template-rows: 5px 30px 10px 40px;
+    grid-template-areas:
+      ". . ."
+      "filter . searchButton"
+      ". . ."
+      ". dropdown dropdown";
+  }
+
+  .marketplace-searchbar-filter {
+    grid-area: filter;
+  }
+
+  .marketplace-searchbar-searchButton {
+    grid-area: searchButton;
+  }
+
+  .marketplace-searchbar-dropdown {
+    grid-area: dropdown;
+  }
+
+  .marketplace-previewComponent-grid {
+    display: grid;
+    grid-template-columns: 10px 100px 10px 150px 10px 80px 10px 200px 10px;
+    grid-template-rows: 5px 30px 5px 20px 5px 300px 10px 30px 30px 10px;
+    grid-template-areas:
+      ". . . . . . . . . "
+      ". title title title title title title title . "
+      ". . . . . . . . . "
+      ". c . . . . . updated . "
+      ". . . . . . . . . "
+      ". Image Image Image Image Image Image Image . "
+      ". . . . . . . . . "
+      ". logo . user . rating . dButton . "
+      ". logo . cName . votes . dTimes . "
+      ". . . . . . . . . ";
+  }
+
+  .marketplace-title {
+    grid-area: title;
+  }
+
+  .marketplace-c {
+    grid-area: c;
+  }
+
+  .marketplace-updated {
+    grid-area: updated;
+  }
+
+  .marketplace-Image {
+    grid-area: Image;
+  }
+
+  .marketplace-logo {
+    grid-area: logo;
+  }
+
+  .marketplace-user {
+    grid-area: user;
+    justify-self: end;
+    align-self: start;
+    position: relative;
+    top: 3px;
+    left: -2px;
+  }
+
+  .marketplace-rating {
+    grid-area: rating;
+    justify-self: start;
+    align-self: end;
+  }
+
+  .marketplace-dButton {
+    grid-area: dButton;
+  }
+
+  .marketplace-cName {
+    grid-area: cName;
+    justify-self: start;
+    align-self: start;
+  }
+
+  .marketplace-votes {
+    grid-area: votes;
+    justify-self: start;
+    align-self: start;
+  }
+
+  .marketplace-dTimes {
+    grid-area: dTimes;
+    position: relative;
+    top: 5px;
+  }
+</style>

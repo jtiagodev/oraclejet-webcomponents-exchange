@@ -1,4 +1,4 @@
-define(["require", "exports", "knockout", "ojs/ojmessages", "ojs/ojinputtext", "ojs/ojnavigationlist", "ojs/ojbutton", "ojs/ojselectcombobox"], function (require, exports, ko) {
+define(["require", "exports", "knockout", "ojs/ojarraydataprovider", "ojs/ojresponsiveutils", "ojs/ojresponsiveknockoututils", "ojs/ojmessages", "ojs/ojinputtext", "ojs/ojnavigationlist", "ojs/ojbutton", "ojs/ojselectcombobox"], function (require, exports, ko, ArrayDataProvider, ResponsiveUtils, ResponsiveKnockoutUtils) {
     "use strict";
     var DashboardViewModel = /** @class */ (function () {
         function DashboardViewModel() {
@@ -22,6 +22,49 @@ define(["require", "exports", "knockout", "ojs/ojmessages", "ojs/ojinputtext", "
                     severity: 'warning',
                     detail: 'Report any issues/bugs to info@dtrgroup.org',
                     autoTimeout: 5000
+                }
+            ]);
+            //Media queries for repsonsive layouts
+            var smQuery = ResponsiveUtils.getFrameworkQuery('sm-only');
+            if (smQuery) {
+                self.smScreen = ResponsiveKnockoutUtils.createMediaQueryObservable(smQuery);
+            }
+            var mdQuery = ResponsiveUtils.getFrameworkQuery('md-up');
+            if (mdQuery) {
+                self.mdScreen = ResponsiveKnockoutUtils.createMediaQueryObservable(mdQuery);
+            }
+            var categories = [
+                {
+                    name: 'Marketplace',
+                    id: 'webComponentsSearch',
+                    iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-chart-icon-24'
+                },
+                {
+                    name: 'Accelerator',
+                    id: 'accelerator',
+                    iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'
+                },
+                {
+                    name: 'About',
+                    id: 'about',
+                    iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
+                }
+            ];
+            self.navDataCategories = new ArrayDataProvider(categories, { keyAttributes: 'id' });
+            self.downloadButton = ko.observable('Download');
+            // TOP USERS
+            self.components = ko.observableArray([{
+                    title: "Some Component",
+                    category: "AI > Chatbots",
+                    updated: "v1.0 (Updated 24.05.2018)",
+                    image: "teste",
+                    companylogo: "cap_logo",
+                    username: "Mister Crowley",
+                    usercountry: "France",
+                    rating: "3.5",
+                    companyname: "Capgemini",
+                    votes: "2352",
+                    downloads: "325"
                 }
             ]);
         }
