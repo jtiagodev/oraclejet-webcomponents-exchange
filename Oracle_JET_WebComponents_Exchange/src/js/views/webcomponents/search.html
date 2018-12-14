@@ -30,14 +30,14 @@
         <div class="atr-component-whitebox marketplace-searchbar-components">
 
           <div class="marketplace-searchbar-filter">
-            <oj-input-text style="height: 100px" data-bind="attr: {placeholder: keywordsPlaceholder}" value="{{keywordsValue}}"
+            <oj-input-text style="height: 100px; min-width: 1000px;" data-bind="attr: {placeholder: keywordsPlaceholder}" value="{{keywordsValue}}"
               required></oj-input-text>
           </div>
 
-          <oj-button class="marketplace-searchbar-searchButton atr-button-highlight"><span data-bind="text: searchButtonText"></span></oj-button>
+          <oj-button style="min-width: 200px;" class="marketplace-searchbar-searchButton atr-button-highlight"><span data-bind="click: searchComponents, text: searchButtonText"></span></oj-button>
 
           <div class="help-item-center marketplace-searchbar-dropdown">
-            <oj-select-one value="{{sortValue}}">
+            <oj-select-one style="min-width: 200px;" value="{{sortValue}}">
               <oj-option value="All">Sort: Newest Items</oj-option>
               <oj-option value="rat">Rating</oj-option>
               <oj-option value="dow">Downloads</oj-option>
@@ -78,7 +78,7 @@
             
                       <div class="marketplace-user">
                         <img style="height: 22px; position: relative; top: 4px;" data-bind="attr: {src: './css/images/flags/' + usercountry + '.png'}"></img>
-                        <oj-text class="marketplace-text" style="justify-content: right;" data-bind="text: username"></oj-text>
+                        <oj-text class="marketplace-text" data-bind="text: username"></oj-text>
                       </div>
             
                       <div class="marketplace-rating">
@@ -205,13 +205,13 @@
   .marketplace-searchbar-components {
     display: grid;
     grid-area: searchBar;
-    grid-template-columns: 1055px 5px 140px;
-    grid-template-rows: 5px 30px 10px 40px;
+    grid-template-columns: minmax(500px, 1fr) 200px 200px;
+    grid-column-gap: 20px;
+    grid-template-rows: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     grid-template-areas:
-      ". . ."
-      "filter . searchButton"
-      ". . ."
-      ". dropdown dropdown";
+      "filter searchButton dropdown";
   }
 
   .marketplace-searchbar-filter {
@@ -265,7 +265,7 @@
 
   .marketplace-user {
     grid-area: user;
-    justify-self: end;
+    justify-self: start;
     align-self: start;
     position: relative;
     top: 3px;

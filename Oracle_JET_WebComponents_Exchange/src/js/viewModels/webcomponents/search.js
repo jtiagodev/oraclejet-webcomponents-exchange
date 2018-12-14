@@ -33,6 +33,35 @@ define(["require", "exports", "knockout", "ojs/ojarraydataprovider", "ojs/ojresp
             if (mdQuery) {
                 self.mdScreen = ResponsiveKnockoutUtils.createMediaQueryObservable(mdQuery);
             }
+            self.searchComponents = function () {
+                self.components.removeAll();
+                self.components.push({
+                    title: "Some Component",
+                    category: "AI > Chatbots",
+                    updated: "v1.0 (Updated 24.05.2018)",
+                    image: "teste",
+                    companylogo: "cap_logo",
+                    username: "Mister Crowley",
+                    usercountry: "France",
+                    rating: "3.5",
+                    companyname: "Capgemini",
+                    votes: "2352",
+                    downloads: "325"
+                });
+                self.components.push({
+                    title: "Some Component #2",
+                    category: "Maps > Google",
+                    updated: "v1.0 (Updated 24.05.2018)",
+                    image: "teste",
+                    companylogo: "cap_logo",
+                    username: "Bon Jovi",
+                    usercountry: "Portugal",
+                    rating: "4.5",
+                    companyname: "Red Samurai",
+                    votes: "2352",
+                    downloads: "325"
+                });
+            };
             var categories = [
                 {
                     name: 'Artificial Intelligence',
@@ -53,33 +82,7 @@ define(["require", "exports", "knockout", "ojs/ojarraydataprovider", "ojs/ojresp
             self.navDataCategories = new ArrayDataProvider(categories, { keyAttributes: 'id' });
             self.downloadButton = ko.observable('Download');
             // TOP USERS
-            self.components = ko.observableArray([{
-                    title: "Some Component",
-                    category: "AI > Chatbots",
-                    updated: "v1.0 (Updated 24.05.2018)",
-                    image: "teste",
-                    companylogo: "cap_logo",
-                    username: "Mister Crowley",
-                    usercountry: "France",
-                    rating: "3.5",
-                    companyname: "Capgemini",
-                    votes: "2352",
-                    downloads: "325"
-                },
-                {
-                    title: "Some Component",
-                    category: "AI > Chatbots",
-                    updated: "v1.0 (Updated 24.05.2018)",
-                    image: "teste",
-                    companylogo: "cap_logo",
-                    username: "Mister Crowley",
-                    usercountry: "France",
-                    rating: "3.5",
-                    companyname: "Capgemini",
-                    votes: "2352",
-                    downloads: "325"
-                }
-            ]);
+            self.components = ko.observableArray([]);
         }
         /**
          * Optional ViewModel method invoked after the View is inserted into the

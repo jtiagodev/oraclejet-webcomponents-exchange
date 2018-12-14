@@ -48,23 +48,23 @@
         </oj-navigation-list>
       </div>
 
-      <div class="marketplace-main-header-user" data-bind="visible: loggedIn()">
+      <div class="marketplace-main-header-user">
+          <div data-bind="visible: loggedIn()">
         <oj-avatar initials='[[loggedInUserInitials]]' size='xs' class="atradiusUserAvatar"></oj-avatar>
-        <span class="atr-subtitle"> Welcome, </span>
-        <span class="atr-subtitle" style="color: #DDBD85" data-bind="text: userName"></span>
+        <span class="atr-subtitle" style="padding-left: 5px; padding-right: 20px;">Welcome, <span class="atr-subtitle" style="color: #DDBD85" data-bind="text: userName"></span></span>
+        <oj-button data-bind="click: logoutUser"><span>Logout</span></oj-button>   
+        </div>
+          <div data-bind="visible: !loggedIn()">
+            <oj-button data-bind="click: loginUser"><i class="fab fa-github-square"></i> <span>GitHub Login</span></oj-button>
+          </div>
       </div>
 
-      <div class="marketplace-main-header-login">
-        <div data-bind="visible: loggedIn()"></div>
-        <oj-button><span>Logout</span></oj-button>
-      </div>
-      <div data-bind="visible: !loggedIn()">
-        <oj-button><i class="fab fa-github-square"></i> <span>GitHub Login</span></oj-button>
-      </div>
+
     </div>
     <!-- END OF HEADER -->
 
     <div class="marketplace-main-headline">
+      OVER 3000 REGISTERED USERS, OVER 50000 WEB COMPONENTS, OVER 200 COMPANIES
     </div>
 
     <div class="marketplace-main-contents">

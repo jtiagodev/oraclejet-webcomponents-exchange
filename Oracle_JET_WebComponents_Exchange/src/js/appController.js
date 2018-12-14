@@ -64,7 +64,7 @@ define(["require", "exports", "knockout", "ojs/ojrouter", "./Utils", "ojs/ojarra
             // Header Navigation setup
             var navData = [
                 {
-                    name: 'Components Exchange',
+                    name: 'COMPONENTS EXCHANGE',
                     id: 'webComponentsSearch',
                     iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-chart-icon-24'
                 },
@@ -74,12 +74,12 @@ define(["require", "exports", "knockout", "ojs/ojrouter", "./Utils", "ojs/ojarra
                 //     iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'
                 // },
                 {
-                    name: 'Events',
+                    name: 'OJET EVENTS',
                     id: 'events',
                     iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
                 },
                 {
-                    name: 'About',
+                    name: 'ABOUT',
                     id: 'about',
                     iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
                 }
@@ -164,6 +164,14 @@ define(["require", "exports", "knockout", "ojs/ojrouter", "./Utils", "ojs/ojarra
                         break;
                     default:
                 }
+            };
+            self.logoutUser = function () {
+                self.loggedIn(false);
+                self.loggedIn.valueHasMutated;
+            };
+            self.loginUser = function () {
+                self.loggedIn(true);
+                self.loggedIn.valueHasMutated;
             };
             self.close = function () {
                 var dialog = document.getElementById('aboutDialog');
