@@ -9,7 +9,7 @@
 define(
   ['ojs/ojcore', 'knockout'],
   function (oj, ko) {
-
+    
     function CommunityViewModel() {
       var self = this;
       // Below are a set of the ViewModel methods invoked by the oj-module component.
