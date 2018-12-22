@@ -5,3 +5,53 @@
     Description:
         This is where any of your application specific styles should be included
 */
+
+.exchange-logo {
+    top: 10px;
+    left: 10px;
+    position: relative;
+}
+
+.exchange-logo:before {
+    content: url("images/exchange-logo-150x100.png")
+}
+
+html:not([dir="rtl"]) .exchange-logo {
+    padding-right: 4px
+}
+
+html[dir="rtl"] .exchange-logo {
+    padding-left: 4px
+}
+
+.exchange-logo:before {
+    display: inline
+}
+
+.oj-web-applayout-header-title {
+    font-size: 3.14286rem;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: normal;
+    line-height: 0;
+    padding-left: 75px;
+    position: absolute;
+    left: 100px;
+    top: 25px;
+}
+
+/**
+* Small screen starts here
+**/
+
+@media screen and (max-width: 767px) {
+    .exchange-logo:before {
+        content: url("images/exchange-logo-75x50.png")
+    }
+    .exchange-logo {
+        top: 2px;
+        left: 36%;
+        padding-bottom: 2px;
+        position: relative;
+    }
+}

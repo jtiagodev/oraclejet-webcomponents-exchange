@@ -88,7 +88,7 @@
               </oj-button>
             </div>
             <div class="oj-flex-bar-middle oj-sm-align-items-baseline">
-              <span role="img" class="oj-icon demo-oracle-icon" title="Oracle Logo" alt="Oracle Logo"></span>
+              <span role="img" class="exchange-logo" title="Exchange Logo" alt="Exchange Logo"></span>
               <h1 class="oj-sm-only-hide oj-web-applayout-header-title" title="Application Name"><oj-bind-text value="[[appName]]"></oj-bind-text></h1>
             </div>
             <div class="oj-flex-bar-end">
@@ -108,11 +108,11 @@
             </div>
           </div>
           <div role="navigation" class="oj-web-applayout-max-width oj-web-applayout-navbar">
-            <oj-navigation-list class="oj-sm-only-hide oj-md-condense oj-md-justify-content-flex-end"
+            <oj-navigation-list class="oj-sm-only-hide oj-md-condense oj-md-justify-content-center"
                                 data="[[navDataSource]]"
                                 edge="top"
                                 item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('navTemplate', true)]]"
-                                selection="{{router.stateId}}">
+                                selection="{{router.stateId}}" style="padding-bottom: 10px">
             </oj-navigation-list>
           </div>
         </header>
