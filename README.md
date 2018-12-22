@@ -1,6 +1,6 @@
 ## ORACLE JET - WEB COMPONENTS COMMUNITY EXCHANGE
 
-![alt text](http://i66.tinypic.com/28720y0.png)
+![alt text](http://i66.tinypic.com/jjlp5j.png)
 
 ### Functional Requirements
 
