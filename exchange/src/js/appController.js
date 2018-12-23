@@ -139,27 +139,27 @@ define(
         {
           name: 'Components',
           id: 'components',
-          iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-chart-icon-24'
+          iconClass: 'oj-navigationlist-item-icon fa-2x far fa-object-group'
         },
         {
           name: 'Community',
           id: 'community',
-          iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'
+          iconClass: 'oj-navigationlist-item-icon fa-2x fas fa-users'
         },
         {
           name: 'Events',
           id: 'events',
-          iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
+          iconClass: 'oj-navigationlist-item-icon fa-2x far fa-calendar-alt'
         },
         {
           name: 'Profile',
           id: 'profile',
-          iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
+          iconClass: 'oj-navigationlist-item-icon  fa-2x fas fa-user'
         },
         {
           name: 'About',
           id: 'about',
-          iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-info-icon-24'
+          iconClass: 'oj-navigationlist-item-icon fa-2x fas fa-info-circle'
         }
       ];
       self.navDataSource = new oj.ArrayTableDataSource(navData, { idAttribute: 'id' });
