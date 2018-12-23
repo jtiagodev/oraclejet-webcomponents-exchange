@@ -96,7 +96,7 @@
             </div>
             <div class="oj-flex-bar-end">
               <!-- Responsive Toolbar -->
-              <oj-toolbar>
+              <oj-toolbar class="toolbar-alignment">
                 <oj-menu-button id="userMenu" display="[[smScreen() ? 'icons' : 'all']]" chroming="half">
                     <img slot="startIcon"
                     :src="[[avatar]]"
@@ -116,19 +116,7 @@
                     </oj-bind-if>
                   </oj-menu>
                 </oj-menu-button>
-              </oj-toolbar>              
-              <!-- <oj-toolbar>
-                <oj-menu-button id="userMenu" display="[[smScreen() ? 'icons' : 'all']]" chroming="half">
-                  <span><oj-bind-text value="[[userLogin]]"></oj-bind-text></span>
-                  <span slot="endIcon" :class="[[{'oj-icon demo-appheader-avatar': smScreen(), 'oj-component-icon oj-button-menu-dropdown-icon': !smScreen()}]]"></span>
-                  <oj-menu id="menu1" slot="menu" style="display:none">
-                    <oj-option id="pref" value="pref">Preferences</oj-option>
-                    <oj-option id="help" value="help">Help</oj-option>
-                    <oj-option id="about" value="about">About</oj-option>
-                    <oj-option id="out" value="out">Sign Out</oj-option>
-                  </oj-menu>
-                </oj-menu-button>
-              </oj-toolbar> -->
+              </oj-toolbar>          
             </div>
           </div>
           <div role="navigation" class="oj-web-applayout-max-width oj-web-applayout-navbar">
