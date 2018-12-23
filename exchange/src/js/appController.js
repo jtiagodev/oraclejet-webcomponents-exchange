@@ -9,15 +9,94 @@
 define(
   ['ojs/ojcore',
     'knockout',
+    'hellojs',
     'ojs/ojmodule-element-utils',
     'ojs/ojmodule-element',
     'ojs/ojrouter',
     'ojs/ojknockout',
     'ojs/ojarraytabledatasource',
     'ojs/ojoffcanvas'],
-  function (oj, ko, moduleUtils) {
+  function (oj, ko, hello, moduleUtils) {
     function ControllerViewModel() {
       var self = this;
+
+      self.authenticated = ko.observable(false);
+
+      function isAuthorized() {
+        if (localStorage.hello !== '{}' && localStorage.hello !== undefined) {
+          self.authenticated(true);
+          return true;
+        }
+        self.authenticated(false);
+        return false;
+      }
+
+      self.menuSelected = function (event) {
+        if (event.type === 'ojAction') {
+          switch (event.target.value) {
+            case 'inGitHub':
+              self.logIn('github');
+              break;
+            case 'out':
+              self.logOut();
+              break;
+            default:
+              console.log("Default hit. This shouldn't happen");
+          }
+        }
+      };
+
+      // Authentication
+      self.authService = ko.observable('github');
+      self.userName = ko.observable('Guest');
+      self.avatar = ko.observable('css/images/avatar_24px.png');
+      self.profile = ko.observableArray([self.userName, self.avatar]);
+
+      self.logIn = function (network) {
+        hello.init({
+          github: '238e9d094d09848c7976'
+        }, { redirect_uri: 'https://peppertech.github.io/ojetexchange/' });
+        self.authService(network);
+        hello(network).login().then(function () {
+          console.log('You are logged in using ' + self.authService());
+        }, function (e) {
+          alert('Login error: ' + e.error.message);
+        });
+      };
+
+      self.logOut = function () {
+        hello(self.authService()).logout();
+        self.router.go('components');
+        self.authenticated(false);
+        self.userName('Guest');
+        self.avatar('css/images/avatar_24px.png');
+        localStorage.removeItem('hello');
+        document.getElementById('menu1').refresh();
+        if (document.getElementById('nav1')) {
+          document.getElementById('nav1').refresh();
+        }
+        if (document.getElementById('nav2')) {
+          document.getElementById('nav2').refresh();
+        }
+        console.log('Logged Out of ' + self.authService());
+      };
+
+      hello.on('auth.login', function (auth) {
+        // Call user information, for the given network
+        hello(auth.network).api('me').then(function (r) {
+          self.authenticated(true);
+          self.userName(r.name);
+          if (auth.network === 'google') {
+            self.avatar(r.thumbnail);
+          } else {
+            self.avatar(r.avatar_url);
+          }
+          document.getElementById('menu1').refresh();
+          document.getElementById('nav1').refresh();
+          document.getElementById('nav2').refresh();
+          // self.router.go(self.router.stateId());
+        });
+      });
 
       // Media queries for repsonsive layouts
       var smQuery = oj.ResponsiveUtils.getFrameworkQuery(oj.ResponsiveUtils.FRAMEWORK_QUERY_KEY.SM_ONLY);
@@ -104,7 +183,7 @@ define(
       // Application Name used in Branding Area
       self.appName = ko.observable('Community Exchange');
       // User Info used in Global Navigation area
-      self.userLogin = ko.observable('john.hancock@oracle.com');
+      self.userLogin = ko.observable(self.userName);
 
       // Footer
       function footerLink(name, id, linkTarget) {

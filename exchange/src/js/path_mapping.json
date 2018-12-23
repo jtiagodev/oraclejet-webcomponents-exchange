@@ -1,13 +1,26 @@
 {
   "baseUrl": "js",
-  "use": "local",
+  "use": "cdn",
 
   "cdns": {
     "jet": "https://static.oracle.com/cdn/jet/v6.0.0/default/js",
-    "3rdparty": "https://static.oracle.com/cdn/jet/v6.0.0/3rdparty"
+    "3rdparty": "https://static.oracle.com/cdn/jet/v6.0.0/3rdparty",
+    "cdnjs": "https://cdnjs.cloudflare.com/ajax/libs/"
   },
 
   "libs": {
+
+    "hellojs": {
+      "cwd": "node_modules/hellojs/dist",
+      "debug": {
+        "src": "hello.all.js",
+        "path": "libs/hellojs/hello.all.js"
+      },
+      "release": {
+        "src": "hello.all.min.js",
+        "path": "libs/hellojs/hello.all.min.js"
+      }
+    },
 
     "knockout": {
       "cdn": "3rdparty",

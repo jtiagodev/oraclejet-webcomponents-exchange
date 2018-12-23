@@ -64,7 +64,8 @@
          ** the header hamburger icon.
       -->
       <div id="navDrawer" role="navigation" class="oj-contrast-marker oj-web-applayout-offcanvas oj-offcanvas-start">
-        <oj-navigation-list data="[[navDataSource]]"
+        <oj-navigation-list id="nav1"
+                            data="[[navDataSource]]"
                             edge="start"
                             item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('navTemplate', true)]]"
                             on-click="[[toggleDrawer]]"
@@ -95,6 +96,27 @@
               <!-- Responsive Toolbar -->
               <oj-toolbar>
                 <oj-menu-button id="userMenu" display="[[smScreen() ? 'icons' : 'all']]" chroming="half">
+                    <img slot="startIcon"
+                    :src="[[avatar]]"
+                    alt="user avatar"
+                    width="30" height="30"/>
+                  <span><oj-bind-text value="[[$data.userLogin()]]"></oj-bind-text></span>
+                  <!-- <span slot="endIcon" :class="[[{'oj-icon demo-appheader-avatar': smScreen(), 'oj-component-icon oj-button-menu-dropdown-icon': !smScreen()}]]"></span> -->
+                  <oj-menu id="menu1" slot="menu" style="display:none" on-oj-action="[[menuSelected]]">
+                    <oj-option id="pref" value="pref">Preferences</oj-option>
+                    <oj-option id="help" value="help">Help</oj-option>
+                    <oj-option id="about" value="about">About</oj-option>
+                    <oj-bind-if test="[[authenticated()]]">
+                      <oj-option id="out" value="out">Log Out</oj-option>
+                    </oj-bind-if>
+                    <oj-bind-if test="[[!authenticated()]]">
+                      <oj-option id="inGitHub" value="inGitHub">Login with GitHub</oj-option>
+                    </oj-bind-if>
+                  </oj-menu>
+                </oj-menu-button>
+              </oj-toolbar>              
+              <!-- <oj-toolbar>
+                <oj-menu-button id="userMenu" display="[[smScreen() ? 'icons' : 'all']]" chroming="half">
                   <span><oj-bind-text value="[[userLogin]]"></oj-bind-text></span>
                   <span slot="endIcon" :class="[[{'oj-icon demo-appheader-avatar': smScreen(), 'oj-component-icon oj-button-menu-dropdown-icon': !smScreen()}]]"></span>
                   <oj-menu id="menu1" slot="menu" style="display:none">
@@ -104,11 +126,12 @@
                     <oj-option id="out" value="out">Sign Out</oj-option>
                   </oj-menu>
                 </oj-menu-button>
-              </oj-toolbar>
+              </oj-toolbar> -->
             </div>
           </div>
           <div role="navigation" class="oj-web-applayout-max-width oj-web-applayout-navbar">
-            <oj-navigation-list class="oj-sm-only-hide oj-md-condense oj-md-justify-content-center"
+            <oj-navigation-list id="nav2"
+                                class="oj-sm-only-hide oj-md-condense oj-md-justify-content-center"
                                 data="[[navDataSource]]"
                                 edge="top"
                                 item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('navTemplate', true)]]"
