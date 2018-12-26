@@ -39,4 +39,6 @@ To run the shell project, follow these steps:
 - type: *npm install*
 - type: *ojet serve*
 
+**To test a live site, go to:** (https://peppertech.github.io/ojetexchange/)
+
 
